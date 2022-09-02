@@ -1,13 +1,10 @@
-package com.test;
-
-import com.numbers.Calculator;
 import java.util.Scanner;
 
 /**
  * Luis Adrian Villalobos Rivera 2ISC 220120379 P1 TM
- * Main class to test Calculator class and run our main program
+ * Main class to test Calculadora class and run our main program
  */
-public class CalculatorTest {
+public class TestCalculadora {
 
     /**
      * Runs main program
@@ -23,7 +20,7 @@ public class CalculatorTest {
      * Prints all kind of options
      */
     private static void menu(){
-        System.out.println("\nWelcome to Calculator program! \n" +
+        System.out.println("\nWelcome to Calculadora program! \n" +
                 "1) Sum\n" +
                 "2) Subtraction\n" +
                 "3) Multiplication\n" +
@@ -68,43 +65,43 @@ public class CalculatorTest {
      * @return if the menu will be printed again
      */
     private static boolean operations(int option){
-        Calculator calculator;
+        Calculadora calculadora;
         boolean repeat = true; //When the requested function finalizes, the option menu will be printed again
 
         switch (option){
             case 1: //sum
                 //asks for the numbers that the operation will be done and creates an instance with that numbers to use its methods
-                calculator = new Calculator(getNumber("number 1"), getNumber("number 2"));
+                calculadora = new Calculadora(getNumber("number 1"), getNumber("number 2"));
                 //ask and print the requested function
-                System.out.println("Sum of " + calculator.getN1() + " + " + calculator.getN2() + " = " + calculator.add());
+                System.out.println("Sum of " + calculadora.getN1() + " + " + calculadora.getN2() + " = " + calculadora.add());
                 return repeat;
             case 2: //subtraction
-                calculator = new Calculator(getNumber("number 1"), getNumber("number 2"));
-                System.out.println("Subtraction of " + calculator.getN1() + " - " + calculator.getN2() + " = " + calculator.subtract());
+                calculadora = new Calculadora(getNumber("number 1"), getNumber("number 2"));
+                System.out.println("Subtraction of " + calculadora.getN1() + " - " + calculadora.getN2() + " = " + calculadora.subtract());
                 return repeat;
             case 3: //multiplication
-                calculator = new Calculator(getNumber("number 1"), getNumber("number 2"));
-                System.out.println("Multiplication of " + calculator.getN1() + " * " + calculator.getN2() + " = " + calculator.multiply());
+                calculadora = new Calculadora(getNumber("number 1"), getNumber("number 2"));
+                System.out.println("Multiplication of " + calculadora.getN1() + " * " + calculadora.getN2() + " = " + calculadora.multiply());
                 return repeat;
             case 4: //division
-                calculator = new Calculator(getNumber("number 1"), getNumber("number 2"));
-                System.out.println("Division of " + calculator.getN1() + " / " + calculator.getN2() + " = " + calculator.split());
+                calculadora = new Calculadora(getNumber("number 1"), getNumber("number 2"));
+                System.out.println("Division of " + calculadora.getN1() + " / " + calculadora.getN2() + " = " + calculadora.split());
                 return repeat;
             case 5: //factorial
-                calculator = new Calculator(getNumber("number 1"), getNumber("number 2"));
-                System.out.println("Factorial of " + calculator.getN1() + " is = " + calculator.factorial());
+                calculadora = new Calculadora(getNumber("number 1"), getNumber("number 2"));
+                System.out.println("Factorial of " + calculadora.getN1() + " is = " + calculadora.factorial());
                 return repeat;
             case 6: //pair
-                calculator = new Calculator(getNumber("number"));
-                System.out.println("Is " + calculator.getN1() + " pair?: " + calculator.isPair());
+                calculadora = new Calculadora(getNumber("number"));
+                System.out.println("Is " + calculadora.getN1() + " pair?: " + calculadora.isPair());
                 return repeat;
             case 7: //perfect number
-                calculator = new Calculator(getNumber("number"));
-                System.out.println("Is " + calculator.getN1() + " perfect number?: " + calculator.isPerfectNumber());
+                calculadora = new Calculadora(getNumber("number"));
+                System.out.println("Is " + calculadora.getN1() + " perfect number?: " + calculadora.isPerfectNumber());
                 return repeat;
             case 8: //friends number
-                calculator = new Calculator(getNumber("number 1"), getNumber("number 2"));
-                System.out.println("Are " + calculator.getN1() + " and " + calculator.getN2() + " friends numbers?: " + calculator.areFriendsNumbers());
+                calculadora = new Calculadora(getNumber("number 1"), getNumber("number 2"));
+                System.out.println("Are " + calculadora.getN1() + " and " + calculadora.getN2() + " friends numbers?: " + calculadora.areFriendsNumbers());
                 return repeat;
             case 9: //finishes it repeats print menu
                 return !repeat;

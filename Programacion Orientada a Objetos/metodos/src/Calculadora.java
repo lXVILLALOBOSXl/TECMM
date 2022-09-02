@@ -1,23 +1,21 @@
-package com.numbers;
-
 /**
  * Luis Adrian Villalobos Rivera 2ISC 220120379 P1 TM
  * Class to make math operations
  */
-public class Calculator {
+public class Calculadora {
 
     private double n1, n2, result; //If you want to use methods with propierties
 
     /**
      * If you want to use the methods with arguments
      */
-    public Calculator() { }
+    public Calculadora() { }
 
     /**
      * If you want to use one number methods with properties
      * @param n1 number to be worked
      */
-    public Calculator(double n1) {
+    public Calculadora(double n1) {
         this.n1 = n1;
     }
 
@@ -26,7 +24,7 @@ public class Calculator {
      * @param n1 number to be worked
      * @param n2 number to be worked
      */
-    public Calculator(double n1, double n2) {
+    public Calculadora(double n1, double n2) {
         this.n1 = n1;
         this.n2 = n2;
     }
@@ -140,7 +138,7 @@ public class Calculator {
 
     @Override
     public String toString() {
-        return "Calculator{" +
+        return "Calculadora{" +
                 "n1=" + n1 +
                 ", n2=" + n2 +
                 ", result=" + result +
