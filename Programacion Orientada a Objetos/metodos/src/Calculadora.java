@@ -102,9 +102,17 @@ public class Calculadora {
 
     private int sumDivisors(int n1){
         int sum = 0;
-        for (int i = 1; i < n1; i++){
-            if(n1 % i == 0){
-                sum+=i;
+        if(n1 > -1) {
+            for (int i = 1; i < n1; i++) {
+                if (n1 % i == 0) {
+                    sum += i;
+                }
+            }
+        }else{
+            for (int i = (n1+1); i < 0; i++) {
+                if (n1 % i == 0) {
+                    sum += i;
+                }
             }
         }
         return sum;
