@@ -80,17 +80,20 @@ public class Calculadora {
     }
 
     public double factorial(double n1){
+        //Positive numbers
         if(n1 > 0){
             if(n1 == 1){
                 return 1;
             }
             return (n1 * factorial(n1-1) );
         }else if(n1 < 0){
+            //Negative numbers
             if(n1 == -1){
                 return -1;
             }
             return (n1 * factorial(n1+1) );
         }else{
+            //Zero case
             return 1;
         }
 
@@ -102,6 +105,7 @@ public class Calculadora {
 
     private int sumDivisors(int n1){
         int sum = 0;
+        //Positive numbers
         if(n1 > -1) {
             for (int i = 1; i < n1; i++) {
                 if (n1 % i == 0) {
@@ -109,6 +113,7 @@ public class Calculadora {
                 }
             }
         }else{
+            //Negative numbers
             for (int i = (n1+1); i < 0; i++) {
                 if (n1 % i == 0) {
                     sum += i;
