@@ -29,7 +29,8 @@ public class TestCalculadora {
                 "6) Is pair?\n" +
                 "7) Is perfect number?\n" +
                 "8) Are friends numbers?\n" +
-                "9) Exit\n");
+                "9) Is prime number?\n" +
+                "10) Exit\n");
     }
 
     /**
@@ -105,6 +106,10 @@ public class TestCalculadora {
                 System.out.println("Are " + calculadora.getN1() + " and " + calculadora.getN2() + " friends numbers?: " + calculadora.areFriendsNumbers());
                 return repeat;
             case 9: //finishes it repeats print menu
+                calculadora = new Calculadora(getNumber("number"));
+                System.out.println("Is " + calculadora.getN1() + " prime number?: " + calculadora.isPrimeNumber());
+                return repeat;
+            case 10:
                 return !repeat;
             default: //If the option was a correct int but a incorrect option
                 System.out.println("Incorrect option, please try again."); //advises to user

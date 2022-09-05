@@ -167,4 +167,29 @@ public class Calculadora {
                 ", result=" + result +
                 '}';
     }
+
+    public boolean isPrimeNumber() {
+        if((int)this.n1 < 0){
+            return false;
+        }
+        for (int i = 2; i < ((int)this.n1+1); i++){
+            if((int)this.n1 % i == 0 && i != (int)this.n1){
+                return false;
+            }
+        }
+        return true;
+    }
+
+
+    public boolean isPrimeNumber(int n1) {
+        if(n1 < 0){
+            return false;
+        }
+        for (int i = 2; i < n1 + 1; i++){
+            if(n1 % i == 0 && i != n1){
+                return false;
+            }
+        }
+        return true;
+    }
 }
