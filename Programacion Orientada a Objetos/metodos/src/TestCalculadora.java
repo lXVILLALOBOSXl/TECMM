@@ -88,7 +88,8 @@ public class TestCalculadora {
                 System.out.println("Division of " + calculadora.getN1() + " / " + calculadora.getN2() + " = " + calculadora.split());
                 return repeat;
             case 5: //factorial
-                calculadora = new Calculadora(getNumber("number 1"), getNumber("number 2"));
+                calculadora = new Calculadora(getNumber("number 1"));
+
                 System.out.println("Factorial of " + calculadora.getN1() + " is = " + calculadora.factorial());
                 return repeat;
             case 6: //pair

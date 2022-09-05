@@ -80,10 +80,20 @@ public class Calculadora {
     }
 
     public double factorial(double n1){
-        if(n1 == 1){
+        if(n1 > 0){
+            if(n1 == 1){
+                return 1;
+            }
+            return (n1 * factorial(n1-1) );
+        }else if(n1 < 0){
+            if(n1 == -1){
+                return -1;
+            }
+            return (n1 * factorial(n1+1) );
+        }else{
             return 1;
         }
-        return (n1 * factorial(n1-1) );
+
     }
 
     public double factorial(){
