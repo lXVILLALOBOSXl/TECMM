@@ -1,5 +1,8 @@
 // Luis Adrian Villalobos Rivera 220120379 2ISC
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  */
