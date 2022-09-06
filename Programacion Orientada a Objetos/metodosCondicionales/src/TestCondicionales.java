@@ -1,9 +1,6 @@
 //Luis Adrian Villalobos Rivera 220120379 2ISC
 import java.util.Scanner;
 
-/**
- *
- */
 public class TestCondicionales {
     /**
      * Runs main program

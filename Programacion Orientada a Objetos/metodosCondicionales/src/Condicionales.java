@@ -1,8 +1,4 @@
 //Luis Adrian Villalobos Rivera 220120379 2ISC
-
-/**
- *
- */
 public class Condicionales {
 
     public static boolean isAdult(int age){
