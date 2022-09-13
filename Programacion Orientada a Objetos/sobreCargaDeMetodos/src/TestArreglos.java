@@ -48,14 +48,16 @@ public class TestArreglos {
                 columns = Util.getNumber("columns");
                 array = new Arreglos(rows,columns);
                 array2 = new Arreglos(rows,columns);
-                System.out.println("Sum of: \n" + array + "\n + \n" +  array2 + "\n = \n" + Arreglos.sum(array.getArray(),array2.getArray()));
+                System.out.println("Sum of: \n" + array + "\n + \n" +  array2 + "\n =");
+                Arreglos.print(Arreglos.sum(array.getArray(),array2.getArray()));
                 return repeat;
             case 4: //subs arrays
                 rows = Util.getNumber("rows");
                 columns = Util.getNumber("columns");
                 array = new Arreglos(rows,columns);
                 array2 = new Arreglos(rows,columns);
-                System.out.println("Sum of: \n" + array + "\n - \n" +  array2 + "\n = \n" + Arreglos.sub(array.getArray(),array2.getArray()));
+                System.out.println("Sum of: \n" + array + "\n - \n" +  array2 + "\n =");
+                Arreglos.print(Arreglos.sub(array.getArray(),array2.getArray()));
                 return repeat;
             case 5: //sums a specific matrix column
                 array = new Arreglos(Util.getNumber("rows"),Util.getNumber("columns"));

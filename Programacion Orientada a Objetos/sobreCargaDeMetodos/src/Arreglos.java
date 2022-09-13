@@ -184,4 +184,38 @@ public class Arreglos {
         }
         return array;
     }
+
+    /**
+     * Prints a matrix
+     * @param matrix
+     */
+    public static void print(int[][] matrix){
+        for (int x = 0; x < matrix.length; x++){
+            System.out.printf("\n{");
+            for (int y = 0;  y < matrix[0].length; y++) {
+                if (y != (matrix[0].length - 1)) {
+                    System.out.printf(matrix[x][y] + ", ");
+                }else {
+                    System.out.printf(Integer.toString(matrix[x][y]));
+                }
+            }
+            System.out.printf("}");
+        }
+    }
+
+    /**
+     * Prints a vector
+     * @param vector
+     */
+    public static void print(int[] vector){
+            System.out.printf("\n{");
+            for (int y = 0;  y < vector.length; y++) {
+                if (y != (vector.length - 1)) {
+                    System.out.printf(vector[y] + ", ");
+                }else {
+                    System.out.printf(Integer.toString(vector[y]));
+                }
+            }
+            System.out.printf("}");
+    }
 }
