@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class TestArreglos {
     /**
      * Runs main program
@@ -8,7 +6,7 @@ public class TestArreglos {
     public static void main(String[] args) {
         do {
             menu(); //Print menu
-        }while (operations((int) getNumber("option"))); //If option isn't exit*/
+        }while (operations(Util.getNumber("option"))); //If option isn't exit*/
     }
 
     /**
@@ -36,104 +34,58 @@ public class TestArreglos {
         int rows, columns;
 
         switch (option){
-            case 1: //
+            case 1: //sums vector contents
                 //ask and print the requested function
-                array = new Arreglos(getNumber("size"));
-                fillArray(array);
-                System.out.println("Sum of " + array.print() +  " = " + array.sum() );
+                array = new Arreglos(Util.getNumber("size"));
+                System.out.println("Sum of " + array +  " = " + Arreglos.sum(array.getArray()));
                 return repeat;
-            case 2: //
-                array = new Arreglos(getNumber("rows"), getNumber("columns"));
-                fillArray(array);
-                System.out.println("Sum of: \n" + array.print() +  " = " + array.sum() );
+            case 2: //sum matrix contents
+                array = new Arreglos(Util.getNumber("rows"),Util.getNumber("columns"));
+                System.out.println("Sum of: \n" + array +  " = " + Arreglos.sum(array.getArray()) );
                 return repeat;
-            case 3: //
-                rows = getNumber("rows");
-                columns = getNumber("columns");
+            case 3: //sums arrays
+                rows = Util.getNumber("rows");
+                columns = Util.getNumber("columns");
                 array = new Arreglos(rows,columns);
                 array2 = new Arreglos(rows,columns);
-                fillArray(array);
-                fillArray(array2);
-                System.out.println("Sum of: \n" + array.print() + "\n + \n" +  array2.print() + "\n = \n" + Arreglos.sum(array, array2).print());
+                System.out.println("Sum of: \n" + array + "\n + \n" +  array2 + "\n = \n" + Arreglos.sum(array.getArray(),array2.getArray()));
                 return repeat;
-            case 4: //
-                rows = getNumber("rows");
-                columns = getNumber("columns");
+            case 4: //subs arrays
+                rows = Util.getNumber("rows");
+                columns = Util.getNumber("columns");
                 array = new Arreglos(rows,columns);
                 array2 = new Arreglos(rows,columns);
-                fillArray(array);
-                fillArray(array2);
-                System.out.println("Sub of: \n" + array.print() + "\n - \n" +  array2.print() + "\n =  \n" + Arreglos.sub(array, array2).print());
+                System.out.println("Sum of: \n" + array + "\n - \n" +  array2 + "\n = \n" + Arreglos.sub(array.getArray(),array2.getArray()));
                 return repeat;
-            case 5:
-                array = new Arreglos(getNumber("rows"), getNumber("columns"));
-                fillArray(array);
-                int column = getNumber("column");
-                while ((column > array.columns || column < 0)) {
-                    System.out.println("Incorrect column");
-                    column = getNumber("column");
+            case 5: //sums a specific matrix column
+                array = new Arreglos(Util.getNumber("rows"),Util.getNumber("columns"));
+                int column = Util.getNumber("column");
+                //The specific column has to exist
+                while (column < 0 || column > (array.getArray()[0].length-1)){
+                    System.out.println("Error, column doesn't exist");
+                    column = Util.getNumber("column");
                 }
-                System.out.println("Column sum of: \n" + array.print() + " = " + array.sumY(column));
+                System.out.println("Column sum of: \n" + array + " = " + Arreglos.sum(column,array.getArray()));
                 return repeat;
             case 6:
-                array = new Arreglos(getNumber("rows"), getNumber("columns"));
-                fillArray(array);
-                int row = getNumber("row");
-                while ((row > array.rows || row < 0)) {
-                    System.out.println("Incorrect row");
-                    row = getNumber("row");
+                //sums a specific matrix row
+                array = new Arreglos(Util.getNumber("rows"),Util.getNumber("columns"));
+                int row = Util.getNumber("row");
+                //The specific row has to exist
+                while (row < 0 || row > (array.getArray().length-1)){
+                    System.out.println("Error, row doesn't exist");
+                    row = Util.getNumber("row");
                 }
-                System.out.println("Column row of: \n" + array.print() + " = " + array.sumX(row));
+                System.out.println("Row sum of: \n" + array + " = " + Arreglos.sum(array.getArray(),row));
                 return repeat;
             case 0: //Exit
                 System.out.println("Bye!");
                 return !repeat;
             default: //If the option was a correct int but a incorrect option
                 System.out.println("Incorrect option, please try again."); //advises to user
-                operations((int) getNumber("option")); //requests a correct option again
+                operations(Util.getNumber("option")); //requests a correct option again
                 return repeat;
         }
     }
 
-    /**
-     * Asks for the inputs and analyzes if is a correct input
-     * @param message Kind of input, for example: number 1, number 2, option
-     * @return recorded entry
-     */
-    public static int getNumber(String message){
-        Scanner scanner = new Scanner(System.in);
-        String input;
-        int number = 0;
-        boolean incorrectInput;
-
-        do {
-            incorrectInput = false;
-            System.out.printf("Type a correct " + message + ": ");
-            input = scanner.nextLine();
-            try { //If the input recorded isn't a int
-                number = Integer.parseInt(input);
-            } catch (Exception ex) { //Warn the user that it input isn't correct input
-                System.out.println("Incorrect input, please try again. ");
-                incorrectInput = true;
-            }
-        }while (incorrectInput); //If the input isn't correct, input again
-
-        return number;
-    }
-
-    public static void fillArray(Arreglos array){
-        if(array.rows > 1){
-            for (int y = 0; y < array.columns; y++){
-                for (int x = 0;  x < array.rows; x++) {
-                    array.insert(x, y, getNumber("Position [" + x + "][" + y + "] "));
-                }
-            }
-            System.out.println("----------------------------");
-            return;
-        }
-        for (int i = 0; i < array.columns; i++){
-            array.insert(i, getNumber("Position [" + i + "]"));
-        }
-        System.out.println("--------------------------");
-    }
 }
