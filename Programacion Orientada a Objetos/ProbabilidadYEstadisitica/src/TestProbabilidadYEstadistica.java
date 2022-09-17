@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class TestProbabilidadYEstadistica {
     public static void main(String[] args) {
@@ -40,34 +39,34 @@ public class TestProbabilidadYEstadistica {
 
         switch (option){
             case 1:
-                System.out.println("Arithmetic Average: " + ProbabilityAndStatics.arithmeticAverage(arrayList()));
+                System.out.println("Arithmetic Average: " + ProbabilityAndStatics.arithmeticAverage(fillNumbersList()));
                 return repeat;
             case 2:
-                System.out.println("mode: " + ProbabilityAndStatics.mode(arrayList()));
+                System.out.println("mode: " + ProbabilityAndStatics.mode(fillNumbersList()));
                 return repeat;
             case 3:
-                System.out.println("median: " + ProbabilityAndStatics.median(arrayList()));
+                System.out.println("median: " + ProbabilityAndStatics.median(fillNumbersList()));
                 return repeat;
             case 4:
-                System.out.println("range: " + ProbabilityAndStatics.range(arrayList()));
+                System.out.println("range: " + ProbabilityAndStatics.range(fillNumbersList()));
                 return repeat;
             case 5:
-                System.out.println("variance: " + ProbabilityAndStatics.variance(arrayList()));
+                System.out.println("variance: " + ProbabilityAndStatics.variance(fillNumbersList()));
                 return repeat;
             case 6:
-                System.out.println("standard deviation: " + ProbabilityAndStatics.standardDeviation(arrayList()));
+                System.out.println("standard deviation: " + ProbabilityAndStatics.standardDeviation(fillNumbersList()));
                 return repeat;
             case 7:
-                System.out.println("variation coefficient: " + ProbabilityAndStatics.variationCoefficient(arrayList()));
+                System.out.println("variation coefficient: " + ProbabilityAndStatics.variationCoefficient(fillNumbersList()));
                 return repeat;
             case 8:
-                System.out.println(ProbabilityAndStatics.stemAndLeaf(arrayList()));
+                System.out.println(ProbabilityAndStatics.stemAndLeaf(fillNumbersList()));
                 return repeat;
             case 9:
-                System.out.println(ProbabilityAndStatics.frecuencyDistributionTable(arrayList(),Util.getIntNumber("class number")));
+                System.out.println(ProbabilityAndStatics.frecuencyDistributionTable(fillNumbersList(),Util.getIntNumber("class number")));
                 return repeat;
             case 10:
-                ArrayList<Double> numbersList = arrayList();
+                ArrayList<Double> numbersList = fillNumbersList();
                 System.out.println("Arithmetic Average: " + ProbabilityAndStatics.arithmeticAverage(numbersList));
                 System.out.println("mode: " + ProbabilityAndStatics.mode(numbersList));
                 System.out.println("median: " + ProbabilityAndStatics.median(numbersList));
@@ -102,7 +101,7 @@ public class TestProbabilidadYEstadistica {
         }
     }
 
-    private static ArrayList<Double> arrayList(){
+    private static ArrayList<Double> fillNumbersList(){
         ArrayList<Double> arrayList = new ArrayList<Double>();
         int n = 0;
         String input;
@@ -116,7 +115,7 @@ public class TestProbabilidadYEstadistica {
                 break;
             }
             do {
-                try { //If the input recorded isn't a int
+                try { //If the input recorded isn't a double
                     doubleInput = Double.parseDouble(input);
                 } catch (Exception ex) { //Warn the user that it input isn't correct input
                     System.out.println("Incorrect input, please try again. ");
