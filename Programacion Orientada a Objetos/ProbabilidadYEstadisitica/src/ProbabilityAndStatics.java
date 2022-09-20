@@ -18,8 +18,12 @@ public final class ProbabilityAndStatics {
         return sum;
     }
 
-    private static int widhtColumn(ArrayList<Double> numbersList, int classNumber){
-        return (int)Math.round(ProbabilityAndStatics.range(numbersList) / classNumber);
+    private static int classNumber(ArrayList<Double> numbersList){
+        return (int)Math.ceil(numbersList.size()/10.0);
+    }
+
+    private static int widhtColumn(ArrayList<Double> numbersList){
+        return (int)Math.round(ProbabilityAndStatics.range(numbersList) / ProbabilityAndStatics.classNumber(numbersList));
     }
 
     private static double factorial(double n) {
@@ -115,40 +119,24 @@ public final class ProbabilityAndStatics {
     }
 
 
-    public static String frecuencyDistributionTable(ArrayList<Double> numbersList, int classNumber){
+    public static String frecuencyDistributionTable(ArrayList<Double> numbersList){
         ProbabilityAndStatics.sort(numbersList);
-        double widhtColumn = ProbabilityAndStatics.widhtColumn(numbersList,classNumber);
-        int index = 0, observationNumber;
+        double widhtColumn = ProbabilityAndStatics.widhtColumn(numbersList);
+        int index = 0, observationNumber, classNumber = ProbabilityAndStatics.classNumber(numbersList);
         double toNumber, observationNumberD;
         String table = "\nColumn\tWidht Column\tObservation Number\tPercentage\n";
 
         while (widhtColumn < 1){
-            if(ProbabilityAndStatics.range(numbersList) == 0){
-                table += 1 + "\t\t";
-                table += numbersList.get(0) + " to " + numbersList.get(numbersList.size()-1) + "\t\t\t";
-                table += numbersList.size() + "\t\t\t\t";
-                table += "100%\n";
+                table += 1 + "\t\t" + numbersList.get(0) + " to " + numbersList.get(numbersList.size()-1) + "\t\t\t" + numbersList.size() + "\t\t\t\t" + "100%\n";
                 return table;
-            }
-            System.out.println("Incorrect class");
-            classNumber = Util.getIntNumber("class");
-            widhtColumn = ProbabilityAndStatics.widhtColumn(numbersList,classNumber);
         }
 
         for (int i = 0; i < classNumber; ++i){
-            table += "\t" + (i+1);
-            table += "\t" + (numbersList.get(index) + " to " );
 
-            if(numbersList.get(index) == numbersList.get(numbersList.size()-1)){
-                toNumber = numbersList.get(index);
-                table += toNumber;
-                observationNumberD = 1;
-                table += "\t\t\t" + 1 + "\t\t\t\t" +String.format( "%.2f", ((observationNumberD*100)/numbersList.size())) + "%\n";
-                break;
-            }else{
-                toNumber = numbersList.get(index) + widhtColumn;
-            }
+            table += "\t" + (i+1) + "\t" + (numbersList.get(index) + " to " );
+            toNumber = numbersList.get(index) + widhtColumn;
             observationNumber = 0;
+
             for (int k = index; k < numbersList.size(); ++k) {
                 if (numbersList.get(k) <= toNumber) {
                     observationNumber++;
@@ -164,15 +152,13 @@ public final class ProbabilityAndStatics {
                     break;
                 }
                 if(k == numbersList.size()-1){
-                    toNumber = numbersList.get(k - 1);
+                    toNumber = numbersList.get(k);
                     table += toNumber;
                 }
             }
+
             observationNumberD = observationNumber;
             table += "\t\t\t" + observationNumber + "\t\t\t\t" +String.format( "%.2f", ((observationNumberD*100)/numbersList.size())) + "%\n";
-            if(index == numbersList.size()){
-                break;
-            }
         }
         return table;
     }

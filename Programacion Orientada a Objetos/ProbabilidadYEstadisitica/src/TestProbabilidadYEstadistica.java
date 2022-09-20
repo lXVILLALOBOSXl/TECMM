@@ -63,7 +63,7 @@ public class TestProbabilidadYEstadistica {
                 System.out.println(ProbabilityAndStatics.stemAndLeaf(fillNumbersList()));
                 return repeat;
             case 9:
-                System.out.println(ProbabilityAndStatics.frecuencyDistributionTable(fillNumbersList(),Util.getIntNumber("class number")));
+                System.out.println(ProbabilityAndStatics.frecuencyDistributionTable(fillNumbersList()));
                 return repeat;
             case 10:
                 ArrayList<Double> numbersList = fillNumbersList();
@@ -75,7 +75,7 @@ public class TestProbabilidadYEstadistica {
                 System.out.println("standard deviation: " + ProbabilityAndStatics.standardDeviation(numbersList));
                 System.out.println("variation coefficient: " + ProbabilityAndStatics.variationCoefficient(numbersList));
                 System.out.println(ProbabilityAndStatics.stemAndLeaf(numbersList));
-                System.out.println(ProbabilityAndStatics.frecuencyDistributionTable(numbersList,Util.getIntNumber("class number")));
+                System.out.println(ProbabilityAndStatics.frecuencyDistributionTable(numbersList));
                 return repeat;
             case 11:
                 System.out.println("combination: " + ProbabilityAndStatics.combination(Util.getDoubleNumber("n"),Util.getDoubleNumber("r")) + " units");
