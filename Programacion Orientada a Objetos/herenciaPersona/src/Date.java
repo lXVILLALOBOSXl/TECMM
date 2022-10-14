@@ -10,7 +10,7 @@ public class Date {
         this.year = year;
     }
 
-    public static boolean validDate(Date date){
+    public static boolean isValidDate(Date date){
         if(date.month > 12 || date.month < 1 || date.day < 1 || date.day > 31 || date.year < 1900 || date.year > 2022){
             System.out.println("Invalid date, try again");
             return false;
