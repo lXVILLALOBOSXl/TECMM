@@ -18,6 +18,10 @@ public class Util {
             input = scanner.nextLine();
             try { //If the input recorded isn't a int
                 number = Integer.parseInt(input);
+                if(number < 0){
+                    System.out.println("You number can't be negative");
+                    throw new Exception();
+                }
             } catch (Exception ex) { //Warn the user that it input isn't correct input
                 System.out.println("Incorrect input, please try again. ");
                 incorrectInput = true;
@@ -38,6 +42,10 @@ public class Util {
             input = scanner.nextLine();
             try { //If the input recorded isn't a int
                 number = Double.parseDouble(input);
+                if(number < 0){
+                    System.out.println("You number can't be negative");
+                    throw new Exception();
+                }
             } catch (Exception ex) { //Warn the user that it input isn't correct input
                 System.out.println("Incorrect input, please try again. ");
                 incorrectInput = true;
