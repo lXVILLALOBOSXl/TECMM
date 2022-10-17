@@ -17,6 +17,7 @@ public class Coach extends TeamMate {
         return isLeaderingMatch;
     }
 
+    //A team mate can't be doing both things as the same time
     public void setLeaderingMatch(boolean leaderingMatch) {
         if(leaderingMatch){
             System.out.println(this.name + " " + this.lastName + " is leadering a match");
@@ -29,6 +30,7 @@ public class Coach extends TeamMate {
         return isLeaderingTraining;
     }
 
+    //A team mate can't be doing both things as the same time
     public void setLeaderingTraining(boolean leaderingTraining) {
         if(leaderingTraining){
             System.out.println(this.name + " " + this.lastName + " is leadering a training");

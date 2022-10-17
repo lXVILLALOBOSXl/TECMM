@@ -19,6 +19,7 @@ public class Player extends TeamMate {
         return isPlaying;
     }
 
+    //A team mate can't be doing both things as the same time
     public void setPlaying(boolean playing) {
         if(playing){
             System.out.println(this.name + " " + this.lastName + " is playing");
@@ -31,6 +32,7 @@ public class Player extends TeamMate {
         return isTraining;
     }
 
+    //A team mate can't be doing both things as the same time
     public void setTraining(boolean training) {
         if(training){
             System.out.println(this.name + " " + this.lastName + " is training");

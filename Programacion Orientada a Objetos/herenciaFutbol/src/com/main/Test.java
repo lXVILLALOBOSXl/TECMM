@@ -41,14 +41,14 @@ public class Test {
         boolean repeat = true; //When the requested function finalizes, the option menu will be printed again
 
         switch (option){
-            case 1: //add comission employee
+            case 1: //add player
                 //ask and print the requested function
                 team.add(setPlayer());
                 return repeat;
-            case 2: //add employee
+            case 2: //add trainer
                 team.add(setTrainer());
                 return repeat;
-            case 3: //add student
+            case 3: //add masseuse
                 team.add(setMasseuse());
                 return repeat;
             case 4: //find
@@ -65,7 +65,7 @@ public class Test {
     }
 
     /**
-     * create an Employee Comission Instance and request
+     * create a Player Instance and request
      * its respect info
      * @return new Employee Comission
      */
@@ -74,7 +74,7 @@ public class Test {
     }
 
     /**
-     * create an Employee Instance and request
+     * create a Trainer Instance and request
      * its respect info
      * @return new Employee
      */
@@ -83,7 +83,7 @@ public class Test {
     }
 
     /**
-     * create an Student Instance and request
+     * create a Masseuse Instance and request
      * its respect info
      * @return new Student
      */
@@ -105,21 +105,21 @@ public class Test {
             name = name.toLowerCase();
             //If finds a match
             if(nameToFind.equals(name)){
-                //Guess kind of Person
+                //Guess kind of Team mate
                 if(teamMate instanceof Player){
                     do {
-                        playerMenu();  //Print employee menu
+                        playerMenu();  //Print player menu
                     }while (playerOperations(Util.getInt("option"),(Player) teamMate)); //If option isn't exist*/
                     return;
                 }else if(teamMate instanceof Coach){
                     //Print employee info
                     do {
-                        coachMenu();  //Print employee menu
+                        coachMenu();  //Print coach menu
                     }while (coachOperations(Util.getInt("option"),(Coach) teamMate)); //If option isn't exist*/
                     return;
                 }else{
                     do {
-                        masseuseMenu();  //Print employee menu
+                        masseuseMenu();  //Print masseuse menu
                     }while (masseuseOperations(Util.getInt("option"),(Masseuse) teamMate)); //If option isn't exist*/
                     return;
                 }
@@ -144,10 +144,10 @@ public class Test {
 
         switch (option){
             case 1:
-                //add sale
+                //set if it's playing a match
                 player.setPlaying(true);
                 return repeat;
-            case 2: //print info
+            case 2: //set if it's training
                 player.setTraining(true);
                 return repeat;
             case 3: //print info
@@ -178,19 +178,19 @@ public class Test {
 
         switch (option){
             case 1:
-                //add note
+                //set if it's leadering a match
                 coach.setLeaderingMatch(true);
                 return repeat;
-            case 2: //print info
+            case 2: //set if it's leadering a training
                 coach.setLeaderingTraining(true);
                 return repeat;
             case 3: //print info
                 System.out.println(coach);
                 return repeat;
-            case 4: //print info
+            case 4: //set if the team is traveling
                 travel();
                 return repeat;
-            case 5: //print info
+            case 5: //set if the team is in concentration
                 concentration();
                 return repeat;
             case 0: //Exit
@@ -214,7 +214,7 @@ public class Test {
 
         switch (option){
             case 1:
-                //add note
+                //set if is givina massage
                 masseuse.setGivingMassage(true);
                 return repeat;
             case 2: //print info
@@ -229,6 +229,12 @@ public class Test {
         }
     }
 
+    /**
+     * Set theirs respect status according with the travel
+     * All the players are playing
+     * The coach is leadering match
+     * The massause can't be giving massage
+     */
     private static void travel(){
         for (TeamMate teamMate : team) {
             if(teamMate instanceof Player){
@@ -241,6 +247,12 @@ public class Test {
         }
     }
 
+    /**
+     * Set theirs respect status according with the concentration
+     * All the players are training
+     * The coach is leadering training
+     * The massause could being give massage
+     */
     private static void concentration(){
         for (TeamMate teamMate : team) {
             if(teamMate instanceof Player){

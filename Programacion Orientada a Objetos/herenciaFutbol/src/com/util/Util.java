@@ -8,6 +8,7 @@ public abstract class Util {
 
     /**
      * Asks for the inputs and analyzes if is a correct input
+     * an check if it's positive number
      * @param message Kind of input, for example: number 1, number 2, option
      * @return recorded entry
      */

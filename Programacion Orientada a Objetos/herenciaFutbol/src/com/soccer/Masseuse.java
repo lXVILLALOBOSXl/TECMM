@@ -17,6 +17,7 @@ public class Masseuse extends TeamMate {
         return isGivingMassage;
     }
 
+    //A team mate can't be doing both things as the same time
     public void setGivingMassage(boolean givingMassage) {
         if(givingMassage){
             System.out.println(this.name + " " + this.lastName + " is giving a massage");
