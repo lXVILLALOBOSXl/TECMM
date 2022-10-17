@@ -21,7 +21,7 @@ public class EmployeeComission extends Employee {
     public String toString() {
         return super.toString() + " EmployeeComission{" +
                 "payment=" + payment +
-                ", comissionPercentaje=" + getPayment() +
+                ", totalPayment=" + getPayment() +
                 ", moneySales=" + moneySales +
                 '}';
     }
