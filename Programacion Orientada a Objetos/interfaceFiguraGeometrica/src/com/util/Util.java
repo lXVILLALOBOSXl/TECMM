@@ -46,8 +46,8 @@ public class Util {
             input = scanner.nextLine();
             try { //If the input recorded isn't a int
                 number = Double.parseDouble(input);
-                if(number < 0){
-                    System.out.println("You number can't be negative");
+                if(number < 1){
+                    System.out.println("You number have to be higher than one");
                     throw new Exception();
                 }
             } catch (Exception ex) { //Warn the user that it input isn't correct input
