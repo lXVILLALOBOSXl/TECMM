@@ -71,7 +71,7 @@ public final class ProbabilityAndStatics {
                 )
             )));
         }
-        return numbersList.size()/2;
+        return numbersList.get(numbersList.size()/2);
     }
 
     //Dispersion Measures
