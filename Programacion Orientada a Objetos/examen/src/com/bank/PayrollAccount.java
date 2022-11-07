@@ -1,6 +1,5 @@
 package com.bank;
 
-import com.test.Main;
 import com.util.Util;
 
 import java.util.ArrayList;
@@ -38,18 +37,15 @@ public class PayrollAccount extends Account{
 
         switch (option){
             case 1:
-                this.deposit(Util.getDouble("amonut"),new Date());
+                this.movements.add(this.deposit(Util.getDouble("amonut"),new Date()));
                 System.out.println("Currently balance: " + this.getBalance());
                 return repeat;
             case 2:
                 double amount =Util.getDouble("amonut");
-
                 while (!this.checkBalance(amount)){
                     amount =Util.getDouble("amonut");
                 }
-
-                this.withdrawal(amount,new Date());
-
+                this.movements.add(this.withdrawal(amount,new Date()));
                 System.out.println("Currently balance: " + this.getBalance());
                 return repeat;
             case 3:
@@ -86,7 +82,7 @@ public class PayrollAccount extends Account{
 
     private Movement withdrawal(double amount, Date movementDate){
         Movement m = new Movement("withdrawal",movementDate,amount,this.getBalance(),(amount - this.getBalance()));
-        this.setBalance((amount - this.getBalance()));
+        this.setBalance((this.getBalance() - amount));
         return m;
     }
 

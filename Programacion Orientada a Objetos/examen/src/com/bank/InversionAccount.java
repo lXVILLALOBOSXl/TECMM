@@ -5,16 +5,16 @@ import java.util.Date;
 public class InversionAccount extends Account{
 
     private int term;
-    private int interest;
+    private double interest;
 
-    public InversionAccount(double balance, Date creationDate, Client client, int term, int interest) {
+    public InversionAccount(double balance, Date creationDate, Client client, int term, double interest) {
         super(balance, creationDate, client);
         this.term = term;
         this.interest = interest;
     }
 
     public void proyectInvertion(){
-        System.out.println("With: " + this.interest + "% interest" + " and " + this.term + " months, is expexted you will win " + (this.getBalance() + (this.getBalance() * ((this.interest / 100) * (this.term / 100))) + "$"));
+        System.out.println("With: " + this.interest + "% interest" + " and " + this.term + " months, is expexted you will win " + (this.getBalance() + (this.getBalance() * (this.interest / 100d) * (this.term / 100d) * 100d)) + "$");
     }
 
     public int getTerm() {
@@ -25,11 +25,11 @@ public class InversionAccount extends Account{
         this.term = term;
     }
 
-    public int getInterest() {
+    public double getInterest() {
         return interest;
     }
 
-    public void setInterest(int interest) {
+    public void setInterest(double interest) {
         this.interest = interest;
     }
 

@@ -65,10 +65,6 @@ public class Main {
         }
     }
 
-    private static Date setDate(){
-       return new Date(Util.getInt("year"),Util.getInt("month"),Util.getInt("day"));
-    }
-
     private static Client setClient(){
         return new Client(Util.getString("name"),Util.getString("last name"),Util.getString("adress"),Util.getString("city"),Util.getString("phone number"));
     }
@@ -80,14 +76,12 @@ public class Main {
 
     private static Account setPayrollAccount(){
         double initialAmount = Util.getDouble("initial ammount");
-        Date creationDate = setDate();
-        return new PayrollAccount(initialAmount, creationDate , setClient(), firstMovement(initialAmount,creationDate));
+        return new PayrollAccount(initialAmount, new Date() , setClient(), firstMovement(initialAmount,new Date()));
     }
 
     private static Account setInvertionAccount(){
         double initialAmount = Util.getDouble("initial ammount");
-        Date creationDate = setDate();
-        return new InversionAccount(initialAmount, creationDate , setClient(), Util.getInt("term"),Util.getInt("interest"));
+        return new InversionAccount(initialAmount, new Date() , setClient(), Util.getInt("term"),Util.getDouble("interest"));
     }
 
 
