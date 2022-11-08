@@ -101,6 +101,10 @@ public class TestProbabilidadYEstadistica {
         }
     }
 
+    /**
+     * Asks and save the user's double inputs
+     * @return List with all user's double inputs
+     */
     private static ArrayList<Double> fillNumbersList(){
         ArrayList<Double> arrayList = new ArrayList<Double>();
         int n = 0;

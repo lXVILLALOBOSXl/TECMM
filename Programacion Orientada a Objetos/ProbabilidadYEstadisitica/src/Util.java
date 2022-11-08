@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Util {
     /**
-     * Asks for the inputs and analyzes if is a correct input
+     * Asks for the int inputs and analyzes if is a correct input
      * @param message Kind of input, for example: number 1, number 2, option
      * @return recorded entry
      */
@@ -27,6 +27,11 @@ public class Util {
         return number;
     }
 
+    /**
+     * Asks for the double inputs and analyzes if is a correct input
+     * @param message Kind of input, for example: number 1, number 2, option
+     * @return recorded entry
+     */
     public static double getDoubleNumber(String message){
         Scanner scanner = new Scanner(System.in);
         String input;
@@ -48,6 +53,11 @@ public class Util {
         return number;
     }
 
+    /**
+     * Asks for the inputs
+     * @param message Kind of input, for example: number 1, number 2, option
+     * @return recorded entry
+     */
     public static String  getInput(String message){
         Scanner scanner = new Scanner(System.in);
         String input;
