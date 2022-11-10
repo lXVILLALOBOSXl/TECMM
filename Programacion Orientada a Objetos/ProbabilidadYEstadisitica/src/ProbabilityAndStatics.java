@@ -59,7 +59,7 @@ public final class ProbabilityAndStatics {
         for(int i = 0; i < numbersList.size(); ++i){ //The static number to compair
             int count = 0;
             for (int j = 0; j < numbersList.size(); ++j){ //The number could be the same
-                if(numbersList.get(j) == numbersList.get(i)){ //Are equals?
+                if(numbersList.get(j).equals(numbersList.get(i))){ //Are equals?
                     ++count; //Coincidence
                 }
                 if (count > maxCount) { //If it had more coincidences than the last max
