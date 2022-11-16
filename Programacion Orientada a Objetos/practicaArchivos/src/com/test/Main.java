@@ -21,7 +21,7 @@ public class Main {
         System.out.println("\nWelcome to Files program! \n" +
                 "1) Add\n" +
                 "2) Calculate\n" +
-                "0) Exit\n");
+                "3) Exit\n");
     }
 
     /**
@@ -39,7 +39,7 @@ public class Main {
             case 2: //Reads numbers and Write asterisk into File
                 Write.write("././asterisks.txt",Cast.intToAsterisks(Read.read("././numbers.txt")));
                 return repeat;
-            case 0: //Exit
+            case 3: //Exit
                 System.out.println("Bye!");
                 return !repeat;
             default: //If the option was a correct int but a incorrect option

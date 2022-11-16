@@ -103,30 +103,29 @@ public class TestProbabilidadYEstadistica {
 
     /**
      * Asks and save the user's double inputs
-     * @return List with all user's double inputs
+     * @return List with all user's couble inputs
      */
     private static ArrayList<Double> fillNumbersList(){
-        ArrayList<Double> arrayList = new ArrayList<Double>();
-        int n = 0;
-        String input;
-        boolean incorrectInput = false;
-        double doubleInput = Util.getDoubleNumber("number " + n);
+        ArrayList<Double> arrayList = new ArrayList<>(); //Save data as String to put chars into file
+        int n = 0; //Index counter
+        String input = "";
+        double doubleInput = Util.getDoubleNumber("number " + n); //Verify if it's a int
+        arrayList.add(doubleInput);
         do {
-            arrayList.add(doubleInput);
             System.out.print("Enter q to quit, or ");
             input = Util.getInput("number " + (++n));
-            if(input.equals("q")|| input.equals("Q")){
+            if(input.equals("Q") || input.equals("q")){ //Ends the recorder inputs
                 break;
             }
-            do {
-                try { //If the input recorded isn't a double
-                    doubleInput = Double.parseDouble(input);
-                } catch (Exception ex) { //Warn the user that it input isn't correct input
-                    System.out.println("Incorrect input, please try again. ");
-                    incorrectInput = true;
-                }
-            }while (incorrectInput); //If the input isn't correct, input again
-        }while (input != "q");
+            try { //Verify if it's a double
+                doubleInput = Double.parseDouble(input);
+                arrayList.add(doubleInput);
+            }catch (Exception e){
+                System.out.println("Incorrect input try again");
+                --n;
+            }
+        }while (true);
+
         return arrayList;
     }
 
