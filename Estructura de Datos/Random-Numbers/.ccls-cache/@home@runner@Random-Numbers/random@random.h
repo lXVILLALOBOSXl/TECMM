@@ -1,0 +1,1 @@
+int generate(const int *n, const int *min, const int *max, const int *p);
