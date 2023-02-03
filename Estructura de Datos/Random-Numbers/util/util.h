@@ -1,0 +1,1 @@
+int askInteger(const char *, bool);

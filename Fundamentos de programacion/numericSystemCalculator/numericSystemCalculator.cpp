@@ -23,6 +23,8 @@ void menuConversion();
 int main()
 {
 
+    Decimal numero2 = Decimal(getNumber());
+    
     int opcion = menu();
 
     switch (opcion)
@@ -50,27 +52,27 @@ int main()
     switch (choiceNumericSystem())
     {
     case 1:
-        Decimal numero1 = Decimal(getNumber());
+        //Decimal numero1 = Decimal(getNumber());
         if(opcion != 5){
             Decimal numero2 = Decimal(getNumber());
         }
         break;
     case 2:
-        Hexadecimal numero1 = Hexadecimal(getNumber());
+       // Hexadecimal numero1 = Hexadecimal(getNumber());
         if(opcion != 5){
-            Hexadecimal numero2 = Hexadecimal(getNumber());
+            //Hexadecimal numero2 = Hexadecimal(getNumber());
         }
         break;
     case 3:
-        Octal numero1 = Octal(getNumber());
+        //Octal numero1 = Octal(getNumber());
         if(opcion != 5){
-            Octal numero2 = Octal(getNumber());
+            //Octal numero2 = Octal(getNumber());
         }
         break;
     case 4:
-        Binary numero1 = Binary(getNumber());
+        //Binary numero1 = Binary(getNumber());
         if(opcion != 5){
-            Binary numero2 = Binary(getNumber());
+            //Binary numero2 = Binary(getNumber());
         }
         break;
     }

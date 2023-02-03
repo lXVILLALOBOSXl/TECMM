@@ -14,7 +14,7 @@ public:
     ~Hexadecimal();
 };
 
-Hexadecimal::Hexadecimal(/* args */)
+Hexadecimal::Hexadecimal()
 {
 }
 
