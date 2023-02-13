@@ -7,6 +7,7 @@ FECHA:      7 de febrero del 2023
 
 #include <iostream>
 
+//Pass copying references
 void swap(int *m, int *n){
 
     int aux = *m;
@@ -15,8 +16,23 @@ void swap(int *m, int *n){
 
 }
 
+/*//Pass copying values
+void swap(int m, int n){
+
+    int aux = m;
+    m = n;
+    n = aux;
+
+}*/
+
 int main(int argc, char const *argv[])
 {
+    /*//Copying values trhought pointers
+    int x = 5;
+    int *q = &x;
+    int z = *q;
+    printf(" z: %i\n",z);*/
+    
     /*int a = 10;
     int *p = &a;
 
