@@ -27,11 +27,6 @@ void swap(int m, int n){
 
 int main(int argc, char const *argv[])
 {
-    /*//Copying values trhought pointers
-    int x = 5;
-    int *q = &x;
-    int z = *q;
-    printf(" z: %i\n",z);*/
     
     /*int a = 10;
     int *p = &a;
@@ -62,6 +57,12 @@ int main(int argc, char const *argv[])
     printf("%lu\n", sizeof(long));
     printf("%lu\n", sizeof(char));
     printf("%lu\n", sizeof(int *));*/
+
+    /*//Copying values trhought pointers
+    int x = 5;
+    int *q = &x;
+    int z = *q;
+    printf(" z: %i\n",z);*/
 
     int a = 21;
     int *p = &a;
