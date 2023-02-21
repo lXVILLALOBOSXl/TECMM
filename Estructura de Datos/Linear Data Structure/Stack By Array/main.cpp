@@ -20,7 +20,7 @@ int main(int argc, char const *argv[]){
     int n = 10;
     Stack s(n);
 
-    /*for (int i = 0; i < n * 2; i++)
+    for (int i = 0; i < n * 2; i++)
     {
         int option = rand() % 2;
 
@@ -59,9 +59,9 @@ int main(int argc, char const *argv[]){
     
         }
 
-    }*/
+    }
 
-    for (int i = 0; i < n; i++)
+    /*for (int i = 0; i < n; i++)
     {
         int x = rand() % (10 * n) + 1;
         printf("Push %i: ", x);
@@ -80,7 +80,7 @@ int main(int argc, char const *argv[]){
         printf("Pop %i: ", x);
         s.print();
         
-    }
+    }*/
     
     
 

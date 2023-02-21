@@ -2,7 +2,7 @@
 AUTOR:      Luis Villalobos
 CURSO:      Estructura de Datos
 PROGRAMA:   Dynamic Queue
-FECHA:      14 de febrero del 2023
+FECHA:      21 de febrero del 2023
 */
 
 #include "queue.hpp"

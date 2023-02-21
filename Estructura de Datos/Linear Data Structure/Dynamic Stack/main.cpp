@@ -1,13 +1,6 @@
 /*
 AUTOR:      Luis Villalobos
 CURSO:      Estructura de Datos
-PROGRAMA:   Circular Buffer
-FECHA:      21 de febrero del 2023
-*/
-
-/*
-AUTOR:      Luis Villalobos
-CURSO:      Estructura de Datos
 PROGRAMA:   Dynamic Stack
 FECHA:      21 de febrero del 2023
 */

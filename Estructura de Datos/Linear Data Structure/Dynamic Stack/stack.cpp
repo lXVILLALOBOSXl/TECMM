@@ -2,7 +2,7 @@
 AUTOR:      Luis Villalobos
 CURSO:      Estructura de Datos
 PROGRAMA:   Dynamic Stack
-FECHA:      14 de febrero del 2023
+FECHA:      21 de febrero del 2023
 */
 
 #include "stack.hpp"

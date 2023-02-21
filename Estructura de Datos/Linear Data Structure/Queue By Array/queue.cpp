@@ -2,7 +2,7 @@
 AUTOR:      Luis Villalobos
 CURSO:      Estructura de Datos
 PROGRAMA:   Queue By Array
-FECHA:      21 de febrero del 2023
+FECHA:      20 de febrero del 2023
 */
 
 #include "queue.hpp"
