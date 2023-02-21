@@ -8,7 +8,8 @@ FECHA:      14 de febrero del 2023
 #ifndef stack_hpp
 #define stack_hpp
 
-#include <stdio.h>
+#include <assert.h>
+#include <iostream>
 
 class Stack{
 
@@ -18,18 +19,20 @@ class Stack{
 
 public:
 
-    Stack(int capacity);
+    Stack(int);
     ~Stack();
 
     void push(int);
     void pop();
     int top();
 
-    int size();
-    int capacity();
+    int size() const { return this -> s; }
+    int capacity() const { return this -> n; }
     
-    bool empty();
-    bool full();
+    bool isEmpty() const { return this -> s == 0; };
+    bool isFull() const { return this -> s == this -> n; };
+
+    void print();
 
 };
 
