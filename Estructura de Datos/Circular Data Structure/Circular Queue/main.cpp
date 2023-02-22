@@ -1,7 +1,7 @@
 /*
 AUTOR:      Luis Villalobos
 CURSO:      Estructura de Datos
-PROGRAMA:   Circular Buffer
+PROGRAMA:   Circular Queue
 FECHA:      20 de febrero del 2023
 */
 
@@ -9,15 +9,13 @@ FECHA:      20 de febrero del 2023
 #include <time.h>
 #include "queue.hpp"
 
-using namespace std;
-
 int main(int argc, char const *argv[]){
     
     srand((unsigned) time(nullptr));
     int n = 10;
     Queue queue(n);
 
-    /*for (int i = 0; i < n * 2; i++)
+    for (int i = 0; i < n * 2; i++)
     {
         int option = rand() % 2;
 
@@ -56,9 +54,9 @@ int main(int argc, char const *argv[]){
     
         }
 
-    }*/
+    }
 
-    for (int i = 0; i < n; i++)
+    /*for (int i = 0; i < n; i++)
     {
         int x = rand() % (10 * n) + 1;
         printf("Enqueue %i: ", x);
@@ -77,7 +75,7 @@ int main(int argc, char const *argv[]){
         printf("Dequeue %i: ", x);
         queue.print();
         
-    }
+    }*/
 
     return 0;
 }

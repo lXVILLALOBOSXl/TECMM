@@ -11,8 +11,6 @@ FECHA:      14 de febrero del 2023
 #include <time.h>
 #include "stack.hpp"
 
-using namespace std;
-
 int main(int argc, char const *argv[]){
 
     srand((unsigned) time(nullptr));

@@ -11,8 +11,6 @@ FECHA:      20 de febrero del 2023
 #include <time.h>
 #include "queue.hpp"
 
-using namespace std;
-
 int main(int argc, char const *argv[]){
 
     srand((unsigned) time(nullptr));

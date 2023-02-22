@@ -1,7 +1,7 @@
 /*
 AUTOR:      Luis Villalobos
 CURSO:      Estructura de Datos
-PROGRAMA:   Circular Buffer
+PROGRAMA:   Circular Queue
 FECHA:      20 de febrero del 2023
 */
 
@@ -10,8 +10,6 @@ FECHA:      20 de febrero del 2023
 
 #include <assert.h>
 #include <iostream>
-
-using namespace std;
 
 class Queue{
 
