@@ -34,12 +34,45 @@ class List{
     int s;     // size
     int n;     // capacity
 
+    Node * find(int x){ //pass the item if it was found
+
+        Node *p = start;
+
+        while (p != nullptr and p->getDatum() < x)
+        {
+            p = p->getNext();
+        }
+
+        if (p != nullptr and p->getDatum() == x)
+        {
+            return p;
+        }
+        
+        return nullptr;
+
+    } 
+
+    /*
+        function search(list: pointer to node, x: data): pointer to node
+        precondition: The list is sorted
+
+        p <- list
+        while p != null and p^.data < x do
+            p <- p^.next
+        end while
+        if p != NULL and p^.data = x then return p
+        else return null
+    */
 public:
 
     List(int);
     ~List();
 
     void insert(int);
+    // bool find(int); only says if the item is there
+    // int find(int); //copy the value if the item was found
+    bool find(int, Node &); // says if the item is there and change the value to item founded
+    bool _delete(int);
 
     int size() const { return this -> s; }
     int capacity() const { return this -> n; }

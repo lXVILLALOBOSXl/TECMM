@@ -22,7 +22,19 @@ int main(int argc, char const *argv[]){
         }
 
     } while (x != 0);
-    
+
+    do
+    {
+        scanf("%i",&x);
+
+        if(list._delete(x)){
+            printf("Item %i removed ",x);
+            list.print();
+            continue;
+        }
+
+        printf("Item %i not funded \n",x);
+    }while (x != 0);
 
     return 0;
 }

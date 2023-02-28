@@ -63,6 +63,109 @@ void List::insert(int x){
 
 }
 
+/*bool List::find(int x){ only says if the item is there
+
+    Node *p = start;
+
+        while (p != nullptr and p->getDatum() < x)
+        {
+            p = p->getNext();
+        }
+
+        if (p != nullptr and p->getDatum() == x)
+        {
+            return true;
+        }
+        
+        return false;
+
+}*/ 
+
+/*int List::find(int x){ //copy the value if the item was found
+
+    Node *p = start;
+
+        while (p != nullptr and p->getDatum() < x)
+        {
+            p = p->getNext();
+        }
+
+        if (p != nullptr and p->getDatum() == x)
+        {
+            return p->getDatum();
+        }
+        
+        return -1;
+
+}*/ 
+
+bool List::find(int x, Node & node){ // says if the item is there and change the value to item founded
+
+    Node *p = start;
+
+        while (p != nullptr and p->getDatum() < x)
+        {
+            p = p->getNext();
+        }
+
+        if (p != nullptr and p->getDatum() == x)
+        {
+            node = Node(p->getDatum());
+            return true;
+        }
+        
+        return false;
+
+} 
+
+bool List::_delete(int x){
+
+    Node *p;
+    Node *q;
+    p = start;
+
+    while (p != nullptr and p->getDatum() < x)
+    {
+        q = p;
+        p = p->getNext();
+    }
+
+    if (p != nullptr and p->getDatum() == x)
+    {
+        if(p == start){
+            start = p->getNext();
+        }else{
+            q->setNext(p->getNext());
+        }
+        
+        delete p;
+        return true;
+    }
+
+    return false;
+    
+}
+
+/*
+    procedure supr(list: pointer to node, x: data)
+    precondition: The list is sorted
+    p,q: pointers
+
+    p <- list
+    while p != null and p^.data < x do
+        q <- p
+        p <- p^.next
+    end while
+    if p != NULL and p^.data = x then {x was located}
+        if p = list then {deletion at the front}
+            list <- p^.next
+        else {deletion at the middle}
+            q^.next <- p^.next
+        end if
+        delete p
+    end if
+*/
+
 void List::print(){
 
     printf("[");
