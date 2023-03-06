@@ -4,9 +4,6 @@ public class DataSet {
     private double x[];
     private double y[];
 
-    public DataSet() {
-    }
-
     public DataSet(double[] x, double[] y) {
         this.x = x;
         this.y = y;
