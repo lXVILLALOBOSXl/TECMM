@@ -18,7 +18,7 @@ int main(int argc, char const *argv[]){
     scanf("%i",&n);
     Queue q(n);
 
-    while ((count <= (n * 4)) && (!q.isFull()))
+    while ((count < (n * 4)) && (!q.isFull()))
     {
         count++;
 
@@ -46,7 +46,5 @@ int main(int argc, char const *argv[]){
         printf("\nYou won %i points\n", q.count());
     }
     
-    
-
     return 0;
 }

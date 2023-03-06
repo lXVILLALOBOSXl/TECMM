@@ -65,13 +65,12 @@ int Queue::count()
             i = forth(i, c);
         } while (i != _rear);
     }
-    
+
     return count;
 }
 
 void Queue::print()
 {
-
     printf("[");
 
     if(!this -> isEmpty()){
@@ -82,6 +81,6 @@ void Queue::print()
             i = this -> forth(i, this -> c);
         }while (i != this -> _rear);
     }
-
+    
     printf(" ]\n");
 }
