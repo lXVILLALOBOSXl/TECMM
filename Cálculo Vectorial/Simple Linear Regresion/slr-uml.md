@@ -1,33 +1,16 @@
 # SLR UML Abstraction and Modelling
 
+## Teory
+Linear regression quantifies the relationship between one or more predictor variable(s) and one outcome variable. Linear regression is commonly used for predictive analysis and modeling. For example, it can be used to quantify the relative impacts of age, gender, and diet (the predictor variables) on height (the outcome variable).  Linear regression is also known as multiple regression, multivariate regression, ordinary least squares (OLS), and regression. This post will show you examples of linear regression, including an example of simple linear regression and an example of multiple linear regression.
+
 ## Abstraction
 
++ Discrete Math
 + DataSet
 + SLR
 + Main
 
+
 ## Modelling
 
-@startuml
-class DataSet{
-- x[]: double
-- y[]: double
-+ DataSet()
-+ DataSet(x[]:double, y[]:double)
-+ getX(): double[]
-+ getY(): double[]
-}
-@enduml
-@startuml
-class SLR{
-- ds: DataSet
-- beta0:double
-- beta1:double
-+ SLR()
-+ SLR(ds:DataSet)
-+ calculateB0():double
-+ calculateB1():double
-+ printRegressionEq():void
-+ toPredict(x:double):double
-}
-@enduml
+[UML Diagram](https://drive.google.com/file/d/15D5kYfdb91pA1Ac_H8fox1uasbUo-xaS/view?usp=sharing)
