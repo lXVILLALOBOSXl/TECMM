@@ -14,7 +14,7 @@ public class Main {
         System.out.println("b0: " + slr.getB0());
         System.out.println("b1: " + slr.getB1());
         System.out.println("Equation: " + slr.getEquation());
-        System.out.print("Number to predict: ");
+        System.out.print("Invest to predict: ");
         double n = s.nextDouble();
         System.out.println("Predict for " + n + ": " + slr.predict(n));
     }
