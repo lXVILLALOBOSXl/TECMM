@@ -4,8 +4,8 @@ public class Main {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
         DataSet dataSet = new DataSet(
-                new double[]{23,26,30,34,43,48,52,57,58},
-                new double[]{651,762,856,1063,1190,1298,1421,1440,1518}
+                new double[]{1,2,3,4,5,6,7,8,9,10},
+                new double[]{3,6,9,12,15,18,21,24,27,30}
         );
 
         SLR slr = new SLR(dataSet);
