@@ -11,45 +11,36 @@ FECHA:      14 de marzo del 2023
 using namespace std;
 
 bool operations(char, List &);
-char getOption();
 string getKey();
-void printRecord(Record record);
 Record create();
+Record create(string, string, int, string);
+void print(Record record);
 
 int main(int argc, char const *argv[])
 {
 
-    List list(10);
+    List list(23);
+    list.insert(create("Chuck Aule", "Mark Ruffalo", 42, "United Kingdom"));
+    list.insert(create("Teddy Daniels", "Leonardo DiCaprio", 41, "United States"));
+    list.insert(create("John Cawley", "Bing Kingsley", 50, "Irlanda"));
+
+    char option;
 
     do
     {
         cout << "\n[A] Add Agent\n[F] Find Agent\n[D] Delete Agent\n[S] Show Agents\n[X] Exit\n";
-    } while (operations(getOption(), list));
+        cin >> option;
+    } while (operations(option, list));
 
     return 0;
-}
-
-char getOption()
-{
-    char option;
-    cin >> option;
-    return option;
 }
 
 string getKey()
 {
     string key;
-    cout << "\nType Agent's key:\n\nKey     :  ";
-    cin >> key;
+    cout << "\nType Agent's key:\n\nKey     :     ";
+    getline(cin >> ws, key);
     return key;
-}
-
-void printRecord(Record record)
-{
-    cout << "\nKey Name :" << record.key
-         << "\nReal Name  :  " << record.name
-         << "\nAge        :  " << record.age
-         << "\nCountry    :  " << record.country<<"\n";
 }
 
 bool operations(char option, List &list)
@@ -62,23 +53,26 @@ bool operations(char option, List &list)
     switch (option)
     {
     case 'A':
-        list.insert(create());
+        if (!list.insert(create()))
+        {
+            cout << "\nKey already in use\n";
+        }
         return true;
     case 'F':
         if (list.find(getKey(), record))
         {
-            printRecord(record);
+            print(record);
         }
         else
         {
-            cout << "\nNo matches";
+            cout << "\nNo matches\n";
         }
         return true;
     case 'D':
         key = getKey();
         if (list.find(key, record))
         {
-            printRecord(record);
+            print(record);
             cout << "\nDelete record (Y/N) ? ";
             cin >> toDelete;
             if (toDelete == 'Y')
@@ -101,12 +95,30 @@ Record create()
 {
     Record r;
     cout << "\nType new agent's data:\n\nKey Name:  ";
-    cin >> r.key;
+    getline(cin >> ws, r.key);
     cout << "Real Name: ";
-    cin >> r.name;
+    getline(cin >> ws, r.name);
     cout << "Age:       ";
     cin >> r.age;
     cout << "Country:   ";
-    cin >> r.country;
+    getline(cin >> ws, r.country);
     return r;
+}
+
+Record create(string _key, string _name, int _age, string _country)
+{
+    Record r;
+    r.key = _key;
+    r.name = _name;
+    r.age = _age;
+    r.country = _country;
+    return r;
+}
+
+void print(Record record)
+{
+    cout << "\nKey Name   :  " << record.key
+         << "\nReal Name  :  " << record.name
+         << "\nAge        :  " << record.age
+         << "\nCountry    :  " << record.country << "\n";
 }

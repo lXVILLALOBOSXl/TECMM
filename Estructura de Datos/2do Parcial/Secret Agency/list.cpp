@@ -7,15 +7,15 @@ FECHA:      14 de marzo del 2023
 
 #include "list.hpp"
 
-List::Node::Node(Record datum)
+List::Node::Node(Record r)
 {
     next = nullptr;
-    datum = datum;
+    datum = r;
 }
 
-List::List(int n)
+List::List(int _n)
 {
-    n = n;
+    n = _n;
     s = 0;
     start = nullptr;
 }
@@ -23,16 +23,15 @@ List::List(int n)
 List::~List()
 {
     Node *p = start;
-    Node *aux;
 
-    while (start != nullptr)
+    while (p != nullptr)
     {
-        aux = p;
-        p = p->getNext();
-        delete aux;
+        Node *next = p->getNext();
+        delete p;
+        p = next;
     }
 
-    delete p;
+    start = nullptr;
 }
 
 bool List::insert(Record datum)
@@ -41,7 +40,8 @@ bool List::insert(Record datum)
 
     if (isEmpty())
     {
-        start = new Node(datum);
+        Node *a = new Node(datum);
+        start = a;
     }
     else
     {
@@ -60,25 +60,34 @@ bool List::insert(Record datum)
         // Final Insertion
         if (p == nullptr)
         {
-
+            if (q->getDatum().key == datum.key)
+            {
+                return false;
+            }
             q->setNext(aux);
         }
         else if (p == start)
         { // Start Insertion
-
+            if (p->getDatum().key == datum.key)
+            {
+                return false;
+            }
             aux->setNext(start);
             start = aux;
         }
         else
         { // Between Insertion
-
+            if (p->getDatum().key == datum.key)
+            {
+                return false;
+            }
             aux->setNext(p);
             q->setNext(aux);
         }
     }
 
-    return true;
     s++;
+    return true;
 }
 
 bool List::find(string key, Record &datum)
@@ -125,6 +134,7 @@ bool List::_delete(string key)
         }
 
         delete p;
+        s--;
         return true;
     }
 
@@ -136,10 +146,10 @@ void List::print()
 
     for (Node *aux = start; aux; aux = aux->getNext())
     {
-        cout << "\nKey Name :" << aux->getDatum().key
-         << "\nReal Name  :  " << aux->getDatum().name
-         << "\nAge        :  " << aux->getDatum().age
-         << "\nCountry    :  " << aux->getDatum().country<<"\n";
+        cout
+            << "\nKey Name   :  " << aux->getDatum().key
+            << "\nReal Name  :  " << aux->getDatum().name
+            << "\nAge        :  " << aux->getDatum().age
+            << "\nCountry    :  " << aux->getDatum().country << "\n";
     }
-
 }
