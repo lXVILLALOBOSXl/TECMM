@@ -1,3 +1,5 @@
+package com.data;
+
 import java.util.Arrays;
 
 public class DataSet {
@@ -26,7 +28,7 @@ public class DataSet {
 
     @Override
     public String toString() {
-        return "DataSet{" +
+        return "com.data.DataSet{" +
                 "x=" + Arrays.toString(x) +
                 ", y=" + Arrays.toString(y) +
                 ", n=" + n +

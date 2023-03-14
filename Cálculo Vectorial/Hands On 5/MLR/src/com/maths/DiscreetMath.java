@@ -1,4 +1,6 @@
-public class DiscreetMath {
+package com.maths;
+
+public final class DiscreetMath {
     public static double sum(double array[]){
         double sum = 0;
         for (double number: array) {
