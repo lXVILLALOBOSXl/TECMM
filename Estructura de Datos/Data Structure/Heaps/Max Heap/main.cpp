@@ -16,7 +16,7 @@ int main(int argc, char const *argv[])
 
     srand((unsigned) time(nullptr));
 
-    int n = 1;
+    int n = 10;
     Heap h(n);
 
     for (int i = 0; i < n; i++)

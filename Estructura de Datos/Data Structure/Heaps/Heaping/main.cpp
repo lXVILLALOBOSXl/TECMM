@@ -6,6 +6,7 @@ FECHA:      14 de marzo del 2023
 */
 
 #include <iostream>
+#include <iomanip>
 #include <time.h>
 #include "heap.hpp"
 
@@ -37,36 +38,26 @@ void swap(int &a, int &b){
     b = aux;
 }
 
-void bubbleSort(int *a, int n){
-
-    // Lim to make pairs
-    for (int k = n - 1; k > 0; k--)
-    {
-        // Form pairs
-        for (int i = 0; i < k; i++)
-        {
-            if(a[i] > a[i + 1]){
-                swap(a[i],a[i + 1]);
-            }
-        }
-        
-    }
-    
-    
-}
 
 int main(int argc, char const *argv[]){
 
-    srand((unsigned (time(nullptr))));
+    srand((unsigned) time(nullptr));
 
     int n = 10;
-    int  *a = create(n);
-    print(a,n);
+    Heap h(n);
 
-    //bubbleSort(a,n);
-    //print(a,n);
+    for (int i = 0; i < n; i++)
+    {
+        int x = rand() % 10 * n + 1;
+        cout <<"ins: "<< setw(3) <<x << "   ";
+        h.insert(x);
+        h.print();
+    }
 
+    cout<<endl;
+    int size = h.size();
+    int * sortedArray = h.heapSort();
+    print(sortedArray, size);
 
-    delete [] a;
     return 0;
 }

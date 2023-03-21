@@ -33,6 +33,7 @@ public:
 
     void insert(int);
     int takeOut();
+    int * heapSort();
 
     int size() const { return this->s; }
     int capacity() const { return this->n; }

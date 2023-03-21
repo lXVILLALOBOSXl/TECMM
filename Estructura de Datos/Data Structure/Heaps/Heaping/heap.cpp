@@ -44,23 +44,37 @@ int Heap::takeOut()
 
         list[0] = list[s - 1];
         int i = 0;
-        s--;
 
         int m = maxChild(i);
 
-        while (i < parent(s - 1) and list[i] > list[m])
+        while (i <= parent(s - 1) and list[i] < list[m])
         {
             swap(list[i], list[m]);
             i = m;
             m = maxChild(i);
         }
         
-    }else{
-        s--;
     }
 
+    s--;
     return x;
 
+}
+
+int* Heap::heapSort(){
+
+    int m = (s - 1);
+    int *orderedArray = new int[2];
+    int x;
+
+    do
+    {
+        x = takeOut();
+        orderedArray[m--] = x;
+    } while (m >= 0);
+
+    return orderedArray;
+    
 }
 
 int Heap::maxChild(int parentIndex){
