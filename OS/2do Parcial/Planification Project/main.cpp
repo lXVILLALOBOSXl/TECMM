@@ -6,7 +6,7 @@
 
 using namespace std;
 
-bool operations(int);
+bool operations(int,List<Process>);
 List<Process> createProcessList();
 Process createProcess();
 int askInteger(const char *, bool);
@@ -14,34 +14,36 @@ int askInteger(const char *, bool);
 int main(int argc, char const *argv[])
 {
 
+    List<Process> list;
     do
     {
+        list = createProcessList();
         cout << "\n[1] FIFO\n[2] SJF\n[3] PRIORITY\n[4] ROUND ROBIN\n[5] Exit\n";
-    } while (operations(askInteger("option", true)));
+    } while (operations(askInteger("option", true),list));
 
     return 0;
 }
 
-bool operations(int option)
+bool operations(int option, List<Process> processes)
 {
 
     switch (option)
     {
     case 1:
         cout << "---------------------FIFO-------------------------------\n";
-        cout << Planification::fifo(createProcessList());
+        cout << Planification::fifo(processes);
         return true;
     case 2:
         cout << "---------------------SJF--------------------------------\n";
-        cout << Planification::sjf(createProcessList());
+        cout << Planification::sjf(processes);
         return true;
     case 3:
         cout << "---------------------PRIORITY---------------------------\n";
-        cout << Planification::priority(createProcessList());
+        cout << Planification::priority(processes);
         return true;
     case 4:
         cout << "---------------------Round Robin------------------------\n";
-        cout << Planification::roundRobin(createProcessList());
+        cout << Planification::roundRobin(processes);
         return true;
     case 5:
         return false;
