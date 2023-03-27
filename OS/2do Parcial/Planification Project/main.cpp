@@ -6,7 +6,7 @@
 
 using namespace std;
 
-bool operations(int,List<Process>);
+bool operations(int, List<Process>);
 List<Process> createProcessList();
 Process createProcess();
 int askInteger(const char *, bool);
@@ -19,7 +19,7 @@ int main(int argc, char const *argv[])
     {
         list = createProcessList();
         cout << "\n[1] FIFO\n[2] SJF\n[3] PRIORITY\n[4] ROUND ROBIN\n[5] Exit\n";
-    } while (operations(askInteger("option", true),list));
+    } while (operations(askInteger("option", true), list));
 
     return 0;
 }

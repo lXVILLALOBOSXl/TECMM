@@ -48,7 +48,7 @@ public:
             }
         }
         planification += "Time prom = ";
-        planification += to_string((double)totalTime / size);
+        planification += to_string((double)((double)totalTime / (double)size));
         planification += "\n";
         return planification;
     }
@@ -82,7 +82,7 @@ public:
             }
         }
         planification += "Time prom = ";
-        planification += to_string((double)totalTime / size);
+        planification += to_string((double)((double)totalTime / (double)size));
         planification += "\n";
         return planification;
     }
@@ -137,7 +137,7 @@ public:
         }
 
         planification += "Time prom = ";
-        planification += to_string((double)(totalTime-(quantum*size)) / size);
+        planification += to_string((double)(((double)totalTime-((double)quantum*(double)size)) / (double)size));
         planification += "\n";
 
         return planification;
@@ -191,7 +191,7 @@ public:
         }
 
         planification += "Time prom = ";
-        planification += to_string((double)(totalTime-(size*quantum)) / size);
+        planification += to_string((double)(((double)totalTime-((double)size*(double)quantum)) / (double)size));
         planification += "\n";
 
         return planification;
