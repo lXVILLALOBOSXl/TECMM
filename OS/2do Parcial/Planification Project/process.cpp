@@ -14,7 +14,7 @@ Process::~Process(){
 }
 
 string Process::toString(){
-    string toString = "Process{";
+    string toString = "{";
     toString += "id=";
     toString += to_string(id);
     toString += ", time=";

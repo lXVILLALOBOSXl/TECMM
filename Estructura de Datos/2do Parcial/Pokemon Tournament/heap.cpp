@@ -33,55 +33,6 @@ void Heap::insert(int x)
     }
 }
 
-/*int Heap::takeOut()
-{
-    assert(!isEmpty());
-
-    int x = list[0];
-
-    if(s > 1){
-
-        list[0] = list[s - 1];
-        int i = 0;
-        s--;
-
-        int m = maxChild(i);
-
-        while (i < parent(s) and list[i] < list[m])
-        {
-            swap(list[i], list[m]);
-            i = m;
-            m = maxChild(i);
-        }
-
-    }else{
-        s--;
-    }
-
-    return x;
-
-}*/
-
-/*int Heap::takeOut()
-{
-    assert(!isEmpty());
-
-    int x = list[0];
-    list[0] = list[s - 1];
-    int i = 0;
-    int m = maxChild(i);
-
-    while (i < parent(s) and list[i] < list[m])
-    {
-        swap(list[i], list[m]);
-        i = m;
-        m = maxChild(i);
-    }
-
-    s--;
-
-    return x;
-}*/
 
 int Heap::takeOut()
 {
