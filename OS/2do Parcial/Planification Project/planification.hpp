@@ -6,13 +6,23 @@
 
 using namespace std;
 
+/*
+    It provides us the main planification methods that exist, are
+    used static because the class works as tool, not for instances
+*/
 class Planification
 {
+    /*
+        Compares the property "time" (int) of the Process objec to sort the list
+    */
     static bool compareByTime(const Process &p1, const Process &p2)
     {
         return p1.time > p2.time;
     }
 
+    /*
+        Compares the property "time" (int) of the Process objec to sort the list
+    */
     static bool compareByPriority(const Process &p1, const Process &p2)
     {
         return p1.priority <= p2.priority;
@@ -20,9 +30,23 @@ class Planification
 
 
 public:
+
+    /*
+        Every algorithm consists in deleting the front of the list of proccess
+        it simules as a process was processed, every time that a process is 
+        processed is necesary to acomulate its time to get the count of its time response
+        and every time response is going to acomulate too to make the sum
+        to get the time total response.
+
+        Every algorithm return an string because is the way to look how the processes are going
+        to be processed.
+
+        Evry algorithm uses a simple Queue methods as insert and remove as FIFO
+    */
     static string fifo(List<Process> processes)
     {
         int size = processes.getSize();
+ 
 
         string planification = "";
 
@@ -42,6 +66,7 @@ public:
             planification += to_string(aux.getTimeResponse());
             planification += "\n";
             processes.remove();
+            // When the last one was remove, there isn't way to get the next process
             if (!processes.isEmpty())
             {
                 aux = processes.getAt(0);
@@ -89,10 +114,13 @@ public:
 
     static string priority(List<Process> processes)
     {
-        processes.sortBy(compareByPriority);
+        processes.sortBy(compareByPriority); //First it has to be sort by priority, that is 
+                                             // the algorithm say us 
+
         int totalTime = 0;
         int size = processes.getSize();
 
+        //get quantum
         for (int i = 0; i < processes.getSize(); i++)
         {
             totalTime += processes.getAt(i).getTime();
@@ -121,7 +149,9 @@ public:
                 {
                     aux = processes.getAt(0);
                 }
-            }else{
+            }else{ //If the quantum is lower that the process's time that is going to be processed
+                   // it has to be proceesed only with the quantum time, and it hast to change position with its before process
+                   // and the process's priority is going to reduce it
                 planification += processes.toString();
                 planification += " ";
                 planification += to_string(quantum);
@@ -176,7 +206,8 @@ public:
                 {
                     aux = processes.getAt(0);
                 }
-            }else{
+            }else{ //If the quantum is lower that the process's time that is going to be processed
+                   // it has to be proceesed only with the quantum time, and it hast to change position with its before process
                 planification += processes.toString();
                 planification += " ";
                 planification += to_string(quantum);

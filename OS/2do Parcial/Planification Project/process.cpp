@@ -1,5 +1,6 @@
 #include "process.hpp"
 
+//Id setter to do an autoincrement
 int Process::count = 1;
 
 Process::Process(int time, int priority){

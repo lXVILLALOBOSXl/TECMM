@@ -17,13 +17,17 @@ int main(int argc, char const *argv[])
     List<Process> list;
     do
     {
+        //Firs asks for the list and next show the menu
         list = createProcessList();
         cout << "\n[1] FIFO\n[2] SJF\n[3] PRIORITY\n[4] ROUND ROBIN\n[5] Exit\n";
-    } while (operations(askInteger("option", true), list));
+    } while (operations(askInteger("option", true), list)); //Ask for an option and pass the list of processes
 
     return 0;
 }
 
+/*
+    Show the algorithm that was request
+*/
 bool operations(int option, List<Process> processes)
 {
 

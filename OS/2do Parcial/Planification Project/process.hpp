@@ -5,6 +5,9 @@
 
 using namespace std;
 
+/*
+    Model class to represent a process
+*/
 class Process
 {
     static int count;
@@ -12,7 +15,6 @@ class Process
     int timeResponse;
 
 public:
-
     Process(){};
     Process(int, int);
     ~Process();
