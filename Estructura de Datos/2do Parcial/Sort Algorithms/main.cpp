@@ -7,9 +7,12 @@ FECHA:      29 de marzo del 2023
 
 #include <iostream>
 #include <time.h>
+#include <string>
+#include <iostream>
 #include "sort.hpp"
 
-int *create(int n){
+int *create(int n)
+{
 
     int *p = new int[n];
     for (int i = 0; i < n; i++)
@@ -17,10 +20,10 @@ int *create(int n){
         p[i] = rand() % (10 * n) + 1;
     }
     return p;
-    
 }
 
-void print(int *a, int n){
+void print(int *a, int n)
+{
 
     printf("[");
     for (int i = 0; i < n; i++)
@@ -28,42 +31,56 @@ void print(int *a, int n){
         printf("%i ", a[i]);
     }
     printf("]\n");
-    
 }
 
-int main(int argc, char const *argv[]){
+int main(int argc, char const *argv[])
+{
 
-    srand((unsigned (time(nullptr))));
+    srand((unsigned(time(nullptr))));
 
-    int n = 10;
-    int  *a = create(n);
+    int n;
+    char option;
+    string s;
+    string number;
+
+    getline(cin >> ws, s);
+    for (int i = 0; i < s.length(); i++)
+    {
+        if(s[i] != ' '){
+            number += s[i];
+            continue;
+        }
+        option = s[i + 1];
+        break;
+    }
+    
+    n = stoi(number);
+
+    int *a = create(n);
     printf("\nArray: \n");
-    print(a,n);
+    print(a, n);
 
-    printf("\nQsorted array: \n");
-    Sort::quick(a,0,(n-1));
-    print(a,n);
+    switch (option)
+    {
+    case 'Q':
+        printf("Qsorted array: \n");
+        Sort::quick(a, 0, (n - 1));
+        break;
+    case 'M':
+        printf("Mergesorted array: \n");
+        Sort::merge(a, 0, n - 1);
+        break;
+    case 'H':
+        printf("Heapsorted array: \n");
+        Sort::heap(a, n);
+        break;
+    default:
+        break;
+    }
 
-    int  *b = create(n);
-    printf("\nArray: \n");
-    print(b,n);
+    print(a, n);
 
-    printf("\nHeapsorted array: \n");  
-    Sort::heap(b,n);
-    print(b,n);
-
-    int  *c = create(n);
-    printf("\nArray: \n");
-    print(c,n);
-
-    printf("\nMergesorted array: \n");  
-    Sort::merge(c,0,n-1);
-    print(c,n);
-
-
-    delete [] a;
-    delete [] b;
-    delete [] c;
+    delete[] a;
 
     return 0;
 }

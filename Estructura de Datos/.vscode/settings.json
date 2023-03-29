@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "new": "cpp",
-        "algorithm": "cpp"
+        "algorithm": "cpp",
+        "istream": "cpp"
     }
 }
