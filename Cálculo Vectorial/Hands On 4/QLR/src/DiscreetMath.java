@@ -29,11 +29,11 @@ public class DiscreetMath {
         return sum;
     }
 
-    public static double sumPow(double a[], int pow){
+    public static double sumPow(double a[], int exponent){
         double sum = 0;
 
         for (int i = 0; i < a.length; i++) {
-            sum += Math.pow(a[i], pow);
+            sum += Math.pow(a[i], exponent);
         }
 
         return sum;
