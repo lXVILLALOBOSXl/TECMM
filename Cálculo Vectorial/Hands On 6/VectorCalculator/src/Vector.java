@@ -1,6 +1,3 @@
-import java.util.ArrayList;
-import java.util.List;
-
 public class Vector {
     private double[] coordinates;
 
@@ -16,7 +13,7 @@ public class Vector {
         return coordinates.length;
     }
 
-    public static Vector add(Vector vectorA, Vector vectorB) {
+    public static Vector sum(Vector vectorA, Vector vectorB) {
         if (vectorA.getDimension() != vectorB.getDimension()) {
             throw new IllegalArgumentException("Vectors must be of the same dimension.");
         }
@@ -30,7 +27,7 @@ public class Vector {
         return new Vector(resultCoordinates);
     }
 
-    public static Vector subtract(Vector vectorA, Vector vectorB) {
+    public static Vector sub(Vector vectorA, Vector vectorB) {
         if (vectorA.getDimension() != vectorB.getDimension()) {
             throw new IllegalArgumentException("Vectors must be of the same dimension.");
         }
@@ -56,6 +53,20 @@ public class Vector {
         }
 
         return result;
+    }
+
+    public static Vector crossProduct(Vector vectorA, Vector vectorB) {
+        if (vectorA.getDimension() != 3 || vectorB.getDimension() != 3) {
+            throw new UnsupportedOperationException("Cross product is only defined for 3-dimensional vectors.");
+        }
+
+        double[] resultCoordinates = new double[3];
+        resultCoordinates[0] = vectorA.getCoordinate(1) * vectorB.getCoordinate(2) - vectorA.getCoordinate(2) * vectorB.getCoordinate(1);
+        resultCoordinates[1] = vectorA.getCoordinate(2) * vectorB.getCoordinate(0) - vectorA.getCoordinate(0) * vectorB.getCoordinate(2);
+        resultCoordinates[2] = vectorA.getCoordinate(0) * vectorB.getCoordinate(1) - vectorA.getCoordinate(1) * vectorB.getCoordinate(0);
+
+        return new Vector(resultCoordinates);
+
     }
 
     public static Vector scalarMultiply(Vector vector, double scalar) {
