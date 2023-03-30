@@ -12,18 +12,19 @@ public class MultipleLinearRegresion extends RegressionModel{
     @Override
     public String equation() {
         String equation = "Y = " + betas[0] + " + ";
+
         for (int i = 1; i < betas.length; i++){
-            equation += (betas[i] + "*x" + (i) + " + ");
+            equation += (betas[i] + "*x^" + (i) + " + ");
         }
         equation += "e";
         return equation;
     }
 
     @Override
-    public double predict(double[] x) {
+    public double predict(double x) {
         double prediction = betas[0];
         for (int i = 1; i < betas.length; i++){
-            prediction += (betas[i] * x[i - 1]);
+            prediction += (betas[i] * (Math.pow(x,i)));
         }
         return prediction;
     }

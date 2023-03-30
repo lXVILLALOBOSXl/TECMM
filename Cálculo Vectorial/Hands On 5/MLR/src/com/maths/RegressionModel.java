@@ -14,6 +14,6 @@ public abstract class RegressionModel {
 
     public abstract String equation();
 
-    public abstract double predict(double[] x);
+    public abstract double predict(double x);
 
 }
