@@ -13,15 +13,15 @@ public class Main {
                 new double[]{8804,17512,25102,30744,35661,38945,40118,41568,39995,37832}
         );*/
 
-        DataSet dsSixSigma = new DataSet(
+        /*DataSet dsSixSigma = new DataSet(
                 new double[]{108,115,106,97,95,91,97,83,83,78,54,67,56,53,61,115,81,78,30,45,99,32,25,28,90,89},
                 new double[]{95,96,95,97,93,94,95,93,92,86,73,80,65,69,77,96,87,89,60,63,95,61,55,56,94,93}
-        );
+        );*/
 
-        /*DataSet dsSixSigma = new DataSet(
+        DataSet dsSixSigma = new DataSet(
                 new double[]{3,5,6,8,10,12,15},
                 new double[]{3.45,6.9,8.79,12.91,17.48,22.49,30.85,}
-        );*/
+        );
 
 
         /*QLR qlr = new QLR(dsVarsity);
@@ -50,7 +50,6 @@ public class Main {
         System.out.println("----------------------------------------");*/
 
         QLR qlr = new QLR(dsSixSigma);
-        qlr.determinant();
         System.out.println(dsSixSigma);
         System.out.println("b0: " + qlr.getB0());
         System.out.println("b1: " + qlr.getB1());

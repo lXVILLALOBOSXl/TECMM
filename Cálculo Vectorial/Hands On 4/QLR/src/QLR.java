@@ -12,10 +12,6 @@ public class QLR {
         this.b2 = calculateWidht();
     }
 
-    public void determinant(){
-        System.out.println((((dataSet.getN() * DiscreetMath.sumPow(dataSet.getX(), 2) * DiscreetMath.sumPow(dataSet.getX(), 4)) +  (DiscreetMath.sum(dataSet.getX()) * DiscreetMath.sumPow(dataSet.getX(), 3) *  DiscreetMath.sumPow(dataSet.getX(), 2)  ) + (DiscreetMath.sumPow(dataSet.getX(), 2) * DiscreetMath.sum(dataSet.getX()) * DiscreetMath.sumPow(dataSet.getX(), 3))) - (Math.pow(DiscreetMath.sumPow(dataSet.getX(), 2),3)) - (dataSet.getN() * Math.pow(DiscreetMath.sumPow(dataSet.getX(), 3),2)) - (DiscreetMath.sumPow(dataSet.getX(), 4) * Math.pow(DiscreetMath.sum(dataSet.getX()),2))  ));
-    }
-
     public double calculateIntersect(){
         return (  ((DiscreetMath.sum(dataSet.getY()) * DiscreetMath.sumPow(dataSet.getX(),2) * DiscreetMath.sumPow(dataSet.getX(),4)) + (DiscreetMath.sum(dataSet.getX()) * DiscreetMath.sumPow(dataSet.getX(),3) * DiscreetMath.sumMultiplication(dataSet.getY(), dataSet.getX(), 2)) + (DiscreetMath.sumPow(dataSet.getX(),2) * DiscreetMath.sumMultiplication(dataSet.getY(), dataSet.getX()) * DiscreetMath.sumPow(dataSet.getX(), 3))) - (DiscreetMath.sumMultiplication(dataSet.getY(), dataSet.getX(),2) * Math.pow(DiscreetMath.sumPow(dataSet.getX(), 2),2)) - (DiscreetMath.sum(dataSet.getY()) * Math.pow(DiscreetMath.sumPow(dataSet.getX(), 3),2)) - (DiscreetMath.sum(dataSet.getX()) * DiscreetMath.sumPow(dataSet.getX(), 4) * DiscreetMath.sumMultiplication(dataSet.getX(), dataSet.getY())) ) /
                 (((dataSet.getN() * DiscreetMath.sumPow(dataSet.getX(), 2) * DiscreetMath.sumPow(dataSet.getX(), 4)) +  (DiscreetMath.sum(dataSet.getX()) * DiscreetMath.sumPow(dataSet.getX(), 3) *  DiscreetMath.sumPow(dataSet.getX(), 2)  ) + (DiscreetMath.sumPow(dataSet.getX(), 2) * DiscreetMath.sum(dataSet.getX()) * DiscreetMath.sumPow(dataSet.getX(), 3))) - (Math.pow(DiscreetMath.sumPow(dataSet.getX(), 2),3)) - (dataSet.getN() * Math.pow(DiscreetMath.sumPow(dataSet.getX(), 3),2)) - (DiscreetMath.sumPow(dataSet.getX(), 4) * Math.pow(DiscreetMath.sum(dataSet.getX()),2))  );
