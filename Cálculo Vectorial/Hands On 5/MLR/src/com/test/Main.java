@@ -9,7 +9,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
 
-        DataSet dsSixSigmaL = new DataSet(
+        /*DataSet dsSixSigmaL = new DataSet(
                 new double[][]{ {1,108},
                                 {1,115},
                                 {1,106},
@@ -130,17 +130,32 @@ public class Main {
                         {1,90,Math.pow(90,2),Math.pow(90,3),Math.pow(90,4)},
                         {1,89,Math.pow(89,2),Math.pow(89,3),Math.pow(89,4)}},
                 new double[]{95,96,95,97,93,94,95,93,92,86,73,80,65,69,77,96,87,89,60,63,95,61,55,56,94,93}
+        );*/
+
+        DataSet cruzAzul = new DataSet(
+                new double[][]{
+                        {1,1},
+                        {1,2},
+                        {1,3},
+                        {1,4},
+                        {1,5},
+                        {1,6},
+                        {1,7},
+                        {1,8},
+                        {1,9},
+                        {1,10},
+                        },
+                new double[]{0.5,0,0,0,0,1,1,1,0,1}
         );
 
 
-
-        MultipleLinearRegresion mlr = new MultipleLinearRegresion(dsSixSigmaL);
+        MultipleLinearRegresion mlr = new MultipleLinearRegresion(cruzAzul);
         System.out.println(mlr.equation());
         System.out.println("Number to predict: ");
         int toPredict = s.nextInt();
         System.out.println("Prediction for " +  toPredict + ": " + mlr.predict(toPredict));
 
-        mlr = new MultipleLinearRegresion(dsSixSigmaQ);
+        /*mlr = new MultipleLinearRegresion(dsSixSigmaQ);
         System.out.println("\n" + mlr.equation());
         System.out.println("Number to predict: ");
         toPredict = s.nextInt();
@@ -156,6 +171,6 @@ public class Main {
         System.out.println("\n" + mlr.equation());
         System.out.println("Number to predict: ");
         toPredict = s.nextInt();
-        System.out.println("Prediction for " +  toPredict + ": " + mlr.predict(toPredict));
+        System.out.println("Prediction for " +  toPredict + ": " + mlr.predict(toPredict));*/
     }
 }
