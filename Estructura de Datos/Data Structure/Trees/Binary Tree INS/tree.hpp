@@ -24,7 +24,6 @@ class Tree
         Node *right;
 
     public:
-
         Node(int);
 
         int getDatum() const { return datum; }
@@ -42,13 +41,15 @@ class Tree
     int n;
 
     void inorder(Node *);
+    void deleteTree(Node *);
 
 public:
-
     Tree(int);
     ~Tree();
 
     void insert(int);
+    bool find(int);
+    bool remove(int);
     void print();
 
     int getSize() const { return s; }
