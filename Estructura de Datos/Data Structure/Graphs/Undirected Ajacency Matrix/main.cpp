@@ -26,8 +26,8 @@ int main(int argc, char const *argv[])
 
     print(G);
 
-    printf("\nOrden del grafo: %i\n", G.order());
-    printf("Tamano del grafo: %i\n", G.size());
+    printf("\nGraph's order: %i\n", G.order());
+    printf("TGraph's size: %i\n", G.size());
 
 
     return 0;

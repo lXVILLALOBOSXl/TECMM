@@ -10,7 +10,7 @@ FECHA:      29 de marzo del 2023
 
 #include "heap.hpp"
 
-int counter = 0;
+float counter = 0;
 
 class Sort
 {

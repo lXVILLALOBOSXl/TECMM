@@ -59,7 +59,7 @@ int main(int argc, char const *argv[])
 
     for (int n = 100; n <= 1000; n += 100)
     {
-        int effort = 0;
+        float effort = 0;
 
         for (int i = 0; i < 1000; i++)
         {

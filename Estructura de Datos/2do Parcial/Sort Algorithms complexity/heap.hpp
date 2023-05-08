@@ -31,8 +31,8 @@ public:
     Heap(int);
     ~Heap();
 
-    void insert(int, int &);
-    int takeOut(int &);
+    void insert(int, float &);
+    int takeOut(float &);
 
     int size() const { return this->s; }
     int capacity() const { return this->n; }

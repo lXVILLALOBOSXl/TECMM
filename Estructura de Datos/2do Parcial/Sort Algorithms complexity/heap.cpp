@@ -19,7 +19,7 @@ Heap::~Heap()
     delete[] list;
 }
 
-void Heap::insert(int x, int &c)
+void Heap::insert(int x, float &c)
 {
     assert(!(isFull()));
 
@@ -34,7 +34,7 @@ void Heap::insert(int x, int &c)
     }
 }
 
-int Heap::takeOut(int &c)
+int Heap::takeOut(float &c)
 {
     assert(!isEmpty());
 
