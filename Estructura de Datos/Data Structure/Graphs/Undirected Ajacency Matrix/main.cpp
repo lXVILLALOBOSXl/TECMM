@@ -6,13 +6,18 @@ FECHA:      2 de Mayo del 2023
 */
 
 #include <iostream>
+#include <time.h>
 #include "graph.hpp"
 
 using namespace std;
 
 int main(int argc, char const *argv[])
 {
-    Graph G(6);
+    srand((unsigned(time(nullptr))));
+
+    int order = 20;
+
+    Graph G(order);
 
     G.set(1,3);
     G.set(1,6);
