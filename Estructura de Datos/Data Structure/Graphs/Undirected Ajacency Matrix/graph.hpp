@@ -37,5 +37,6 @@ public:
 };
 
 extern void print(Graph &);
+extern void edges(Graph &);
 
 #endif

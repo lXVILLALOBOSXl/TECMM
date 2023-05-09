@@ -15,7 +15,7 @@ int main(int argc, char const *argv[])
 {
     srand((unsigned(time(nullptr))));
 
-    int order = 20;
+    int order = 6;
 
     Graph G(order);
 
@@ -30,6 +30,9 @@ int main(int argc, char const *argv[])
     G.set(5,6);
 
     print(G);
+    printf("\n");
+    edges(G);
+    
 
     printf("\nGraph's order: %i\n", G.order());
     printf("TGraph's size: %i\n", G.size());

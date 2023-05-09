@@ -77,7 +77,7 @@ void print(Graph &G){
 
     for (int i = 1; i <= G.order(); i++)
     {
-        printf("%i  ",i);
+        //printf("%i  ",i);
         for (int j = 1; j <= G.order(); j++)
         {
             if(i == j){
@@ -90,13 +90,27 @@ void print(Graph &G){
         
     }
 
-    printf("\n   ");
+    /*printf("\n   ");
     for (int i = 1; i <= G.order(); i++)
     {
         printf("%i ",i);
     }
-    printf("\n");
+    printf("\n");*/
     
     
 
+}
+
+void edges(Graph &G){
+
+    for (int i = 1; i <= G.order(); i++)
+    {
+        for (int j = 1; j <= i; j++)
+        {
+            if (i != j && G.edge(i,j))
+            {
+                printf("%i-%i\n", j,i);
+            }
+        }
+    }
 }
