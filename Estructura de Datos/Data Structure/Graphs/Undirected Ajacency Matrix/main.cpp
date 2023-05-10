@@ -40,13 +40,23 @@ int main(int argc, char const *argv[])
 
     Graph graph = simpleGraph(10);
 
-    print(graph);
-    printf("\n");
-    edges(graph);
-    
 
-    printf("\nGraph's order: %i\n", graph.order());
-    printf("Graph's size: %i\n", graph.size());
+    Graph::edges(graph);
+    printf("\n");
+
+    int source = rand() % (order - (1 - 1)) + 1;
+    int target = rand() % (order - (1 - 1)) + 1;
+
+    printf("DFS From %i to %i:\n", source, target);
+    Graph::dfs(graph,source, target).print();
+
+    printf("BFS From %i to %i: %d\n", source, target,Graph::bfs(graph,source, target));
+
+    printf("SP From %i to %i:\n", source, target);
+    Graph::sp(graph,source, target).print();
+    
+    
+    
 
 
     return 0;

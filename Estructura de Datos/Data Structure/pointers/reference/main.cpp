@@ -9,8 +9,17 @@ FECHA:      13 de febrero del 2023
 
 using namespace std;
 
-//Pass by reference
-void swap(int &m, int &n){
+//Pass by reference address
+void swapC(int *m, int *n){
+
+    int aux = *m;
+    *m = *n;
+    *n = aux;
+
+}
+
+//Pass by reference values
+void swapR(int &m, int &n){
     int aux = m;
     m = n;
     n = aux;
@@ -44,10 +53,27 @@ int main(int argc, char const *argv[]){
     cout<<"before swap b: "<<b<<endl;
 
     //Pass by reference
-    swap(a,b);
+    swapR(a,b);
 
     cout<<"after swap a: "<<a<<endl;
     cout<<"after swap b: "<<b<<endl;
+
+
+
+
+    int c = 8;
+    int d = 2;
+    int *p1 = &c;
+    int *p2 = &d;
+
+    cout<<"before swap c: "<<c<<endl;
+    cout<<"before swap d: "<<d<<endl;
+
+    //Pass by reference
+    swapC(p1,p2);
+
+    cout<<"after swap c: "<<c<<endl;
+    cout<<"after swap d: "<<d<<endl;
 
 
     return 0;

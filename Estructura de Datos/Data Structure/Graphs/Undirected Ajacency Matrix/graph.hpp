@@ -10,6 +10,9 @@ FECHA:      2 de Mayo del 2023
 
 #include <iostream>
 #include <assert.h>
+#include "queue.hpp"
+#include "stack.hpp"
+#include "tree.hpp"
 
 using namespace std;
 
@@ -34,9 +37,14 @@ public:
 
     int order() const {return n;};
     int size() const {return s;};
-};
 
-extern void print(Graph &);
-extern void edges(Graph &);
+    static void print(Graph &);
+    static void edges(Graph &);
+
+    static Stack dfs(Graph &, int, int);
+    static bool bfs(Graph &, int, int);
+    static Stack sp(Graph &, int, int);
+
+};
 
 #endif
