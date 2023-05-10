@@ -11,31 +11,42 @@ FECHA:      2 de Mayo del 2023
 
 using namespace std;
 
+Graph simpleGraph(int order)
+{
+    Graph graph(order);
+
+    for (int k = 0; k < (order * 2); k++)
+    {
+        int i = rand() % (order - (1 - 1)) + 1;
+        int j = rand() % (order - (1 - 1)) + 1;
+
+        if(i != j && !graph.edge(i,j)){
+            graph.set(i,j);
+            continue;
+        }
+
+        k--;
+        
+    }
+    
+    return graph;
+}
+
 int main(int argc, char const *argv[])
 {
     srand((unsigned(time(nullptr))));
 
-    int order = 6;
+    int order = 10;
 
-    Graph G(order);
+    Graph graph = simpleGraph(10);
 
-    G.set(1,3);
-    G.set(1,6);
-    G.set(2,3);
-    G.set(2,4);
-    G.set(2,5);
-    G.set(3,5);
-    G.set(4,5);
-    G.set(4,6);
-    G.set(5,6);
-
-    print(G);
+    print(graph);
     printf("\n");
-    edges(G);
+    edges(graph);
     
 
-    printf("\nGraph's order: %i\n", G.order());
-    printf("TGraph's size: %i\n", G.size());
+    printf("\nGraph's order: %i\n", graph.order());
+    printf("Graph's size: %i\n", graph.size());
 
 
     return 0;
