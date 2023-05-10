@@ -42,7 +42,7 @@ public:
     ~Queue();
 
     void enqueue(int);
-    void dequeue();
+    int dequeue();
     int front();
 
     int size() const { return this -> s; }

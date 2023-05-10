@@ -50,9 +50,10 @@ int main(int argc, char const *argv[])
     printf("DFS From %i to %i:\n", source, target);
     Graph::dfs(graph,source, target).print();
 
-    printf("BFS From %i to %i: %d\n", source, target,Graph::bfs(graph,source, target));
-
-    printf("SP From %i to %i:\n", source, target);
+    printf("\nBFS From %i to %i:", source, target);
+    printf(" %d\n",Graph::bfs(graph,source, target));
+    
+    printf("\nSP From %i to %i:\n", source, target);
     Graph::sp(graph,source, target).print();
     
     

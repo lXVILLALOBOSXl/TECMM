@@ -47,12 +47,14 @@ void Queue::enqueue(int x){
 
 }
 
-void Queue::dequeue(){
+int Queue::dequeue(){
 
     assert(!(this -> isEmpty()));
+    int deleted;
 
     Node *aux = this -> _front;
     this -> _front = aux -> getNext();
+    deleted = aux->getDatum();
     delete aux;
 
     if(!(this -> _front)){
@@ -60,6 +62,7 @@ void Queue::dequeue(){
     }
 
     s--;
+    return deleted;
 }
 
 int Queue::front(){

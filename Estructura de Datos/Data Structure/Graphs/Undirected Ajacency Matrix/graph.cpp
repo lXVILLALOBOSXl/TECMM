@@ -116,9 +116,8 @@ void Graph::edges(Graph &G)
 Stack Graph::dfs(Graph &g, int source, int target)
 {
 
-    Graph rute(g.size());
-    Tree M(g.size());
-    Stack stack(g.size());
+    Tree M(g.order());
+    Stack stack(g.order());
     int u;
     int v;
     int smallest = 0;
@@ -161,8 +160,58 @@ Stack Graph::dfs(Graph &g, int source, int target)
 
 bool Graph::bfs(Graph &g, int source, int target)
 {
+
+    Tree M(g.order());
+    Queue queue(g.order());
+    int u;
+    int v;
+
+    queue.enqueue(source);
+    M.insert(source);
+    while (!queue.isEmpty())
+    {
+        u = queue.dequeue();
+        for (int i = 1; i <= g.order(); i++)
+        {
+            if(i != u && g.edge(i,u) && !M.find(i)){
+                v = i;
+                if(v == target){
+                    return true;
+                }
+                queue.enqueue(v);
+                M.insert(v);
+            }
+        }
+    }
+    return false;
 }
 
 Stack Graph::sp(Graph &g, int source, int target)
 {
+    Tree M(g.order());
+    Graph E(g.order());
+    Queue queue(g.order());
+    Stack stack(0);
+    int u;
+    int v;
+
+    queue.enqueue(source);
+    M.insert(source);
+    while (!queue.isEmpty())
+    {
+        u = queue.dequeue();
+        for (int i = 1; i <= g.order(); i++)
+        {
+            if(i != u && g.edge(i,u) && !M.find(i)){
+                v = i;
+                E.set(u,v);
+                if(v == target){
+                    return dfs(E,source,target);
+                }
+                queue.enqueue(v);
+                M.insert(v);
+            }
+        }
+    }
+    return stack;
 }
