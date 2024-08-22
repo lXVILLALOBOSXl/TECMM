@@ -9,6 +9,48 @@ public class Main {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
 
+        DataSet ds = new DataSet(
+                new double[][]{
+                        {1,0,Math.pow(0,2)},
+                        {1,1,Math.pow(1,2)},
+                        {1,2,Math.pow(2,2)},
+                        {1,3,Math.pow(3,2)},
+                        {1,4,Math.pow(4,2)},
+                        {1,5,Math.pow(5,2)},
+                },
+                new double[]{0,1,4,9,16,25}
+        );
+
+        /*DataSet dsSixSigmaL = new DataSet(
+                new double[][]{ {1,108},
+                        {1,115},
+                        {1,106},
+                        {1,97},
+                        {1,95},
+                        {1,91},
+                        {1,97},
+                        {1,83},
+                        {1,83},
+                        {1,78},
+                        {1,54},
+                        {1,67},
+                        {1,56},
+                        {1,53},
+                        {1,61},
+                        {1,115},
+                        {1,81},
+                        {1,78},
+                        {1,30},
+                        {1,45},
+                        {1,99},
+                        {1,32},
+                        {1,25},
+                        {1,28},
+                        {1,90},
+                        {1,89}, },
+                new double[]{58, 58, 52, 58, 57, 52, 55, 53, 49, 54, 59, 56, 53, 58, 57, 58, 56, 51, 50, 59, 59, 59, 55, 50, 55, 52, 53, 54, 61, 56, 55, 60, 57, 56, 61, 58, 53, 57, 57, 55, 60, 51, 52, 56, 55, 57, 58, 57, 51, 59}
+        );*/
+
         /*DataSet dsSixSigmaL = new DataSet(
                 new double[][]{ {1,108},
                                 {1,115},
@@ -37,9 +79,9 @@ public class Main {
                                 {1,90},
                                 {1,89}, },
                 new double[]{95,96,95,97,93,94,95,93,92,86,73,80,65,69,77,96,87,89,60,63,95,61,55,56,94,93}
-        );
+        );*/
 
-        DataSet dsSixSigmaQ = new DataSet(
+        /*DataSet dsSixSigmaQ = new DataSet(
                 new double[][]{
                         {1,108,Math.pow(108,2)},
                         {1,115,Math.pow(115,2)},
@@ -132,7 +174,7 @@ public class Main {
                 new double[]{95,96,95,97,93,94,95,93,92,86,73,80,65,69,77,96,87,89,60,63,95,61,55,56,94,93}
         );*/
 
-        DataSet cruzAzul = new DataSet(
+        /*DataSet cruzAzul = new DataSet(
                 new double[][]{
                         {1,1},
                         {1,2},
@@ -146,10 +188,10 @@ public class Main {
                         {1,10},
                         },
                 new double[]{0.5,0,0,0,0,1,1,1,0,1}
-        );
+        );*/
 
 
-        MultipleLinearRegresion mlr = new MultipleLinearRegresion(cruzAzul);
+        MultipleLinearRegresion mlr = new MultipleLinearRegresion(ds);
         System.out.println(mlr.equation());
         System.out.println("Number to predict: ");
         int toPredict = s.nextInt();
